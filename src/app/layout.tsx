@@ -29,7 +29,7 @@ export const RootLayout: React.FC<
               <div className="h-14 w-full shadow-md">
                 <Header />
               </div>
-              <main>{children}</main>
+              <main className="p-5">{children}</main>
             </div>
           </div>
         </Providers>

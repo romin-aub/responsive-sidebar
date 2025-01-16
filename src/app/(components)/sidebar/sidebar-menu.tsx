@@ -4,12 +4,21 @@ import { MenuList } from "@/menu-list";
 import { useRouter } from "next/navigation";
 import SidebarMenuAccordion from "./menu-accordion";
 import MenuItem from "./menu-item";
+import { useDispatch } from "react-redux";
+import { setBreadcrumbs } from "@/store/breadcrumb-slice";
 
 const SidebarMenu: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const router = useRouter();
+  const dispatch = useDispatch();
 
-  const handleItemClick = (href: string) => {
+  const handleItemClick = (label: string, href: string) => {
+    dispatch(
+      setBreadcrumbs([
+        { label: "Explore", href: "/" },
+        { label, href },
+      ])
+    );
     setActiveMenu(href);
     router.push(href);
   };

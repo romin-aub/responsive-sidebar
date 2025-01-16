@@ -7,7 +7,7 @@ interface IMenuItemProps {
   icon: IconProp;
   href: string;
   isActive: boolean;
-  onClick: (href: string) => void;
+  onClick: (label: string, href: string) => void;
 }
 
 const MenuItem: React.FC<IMenuItemProps> = ({
@@ -24,7 +24,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({
         "flex justify-start items-center rounded-sm h-14 cursor-pointer hover:bg-gray-100",
         isActive && "bg-gray-200"
       )}
-      onClick={() => onClick(href!)}
+      onClick={() => onClick(label, href)}
     >
       <div className="h-full w-14 flex items-center justify-center">
         <FontAwesomeIcon icon={icon} size="xl" />
