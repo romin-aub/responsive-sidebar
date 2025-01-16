@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import { Provider } from "react-redux";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Sidebar from "./(components)/sidebar";
+import { store } from "@/store";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
@@ -18,15 +20,17 @@ export const RootLayout: React.FC<
   return (
     <html lang="en">
       <body>
-        <div className="flex h-screen w-screen">
-          <div className="h-full w-2/12 shadow-md p-3">
-            <Sidebar />
+        <Provider store={store}>
+          <div className="flex h-screen w-screen">
+            <div className="h-full w-2/12 shadow-md p-3">
+              <Sidebar />
+            </div>
+            <div className="h-full w-10/12">
+              <div className="h-14 w-full shadow-md">Header</div>
+              <main>{children}</main>
+            </div>
           </div>
-          <div className="h-full w-10/12">
-            <div className="h-14 w-full shadow-md">Header</div>
-            <main>{children}</main>
-          </div>
-        </div>
+        </Provider>
       </body>
     </html>
   );
