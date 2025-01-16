@@ -2,7 +2,6 @@ import { useState } from "react";
 import { MenuList } from "@/menu-list";
 
 import { useRouter } from "next/navigation";
-import { IMenuList, IMenuListHeader } from "@/types";
 import SidebarMenuAccordion from "./menu-accordion";
 import MenuItem from "./menu-item";
 
@@ -15,13 +14,10 @@ const SidebarMenu: React.FC = () => {
     router.push(href);
   };
 
-  const isMenuListHeader = (item: IMenuList): item is IMenuListHeader => {
-    return (item as IMenuListHeader).items !== undefined;
-  };
   return (
     <div>
       {MenuList.map((item) =>
-        isMenuListHeader(item) ? (
+        "items" in item ? (
           <SidebarMenuAccordion
             key={item.label}
             sidebarHeader={item}
