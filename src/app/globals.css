@@ -62,6 +62,18 @@ body {
   }
 }
 
+::-webkit-scrollbar {
+  @apply h-1 w-1;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-200 rounded-md;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-300;
+}
+
 @layer base {
   * {
     @apply border-border;
