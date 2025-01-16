@@ -1,16 +1,19 @@
 import { IMenuList } from "./types";
 import {
-  faAddressBook,
   faAward,
-  faCalendar,
-  faCaretRight,
-  faCodeCommit,
+  faCalendarAlt,
+  faCalendarDay,
+  faCalendarWeek,
   faContactBook,
-  faDashboard,
-  faDisplay,
   faHome,
-  faRandom,
-  faWindowMinimize,
+  faInbox,
+  faLayerGroup,
+  faPeopleGroup,
+  faPersonBooth,
+  faPuzzlePiece,
+  faRankingStar,
+  faShop,
+  faVestPatches,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const MenuList: IMenuList[] = [
@@ -27,25 +30,25 @@ export const MenuList: IMenuList[] = [
     items: [
       {
         label: "Nominees",
-        icon: faWindowMinimize,
+        icon: faPeopleGroup,
         href: "/awards/nominees",
         enabled: true,
       },
       {
         label: "Day Highlights",
-        icon: faDisplay,
+        icon: faCalendarDay,
         href: "/awards/day-highlights",
         enabled: true,
       },
       {
         label: "Month Highlights",
-        icon: faDisplay,
+        icon: faCalendarWeek,
         href: "/awards/month-highlights",
         enabled: true,
       },
       {
         label: "Year Highlights",
-        icon: faDisplay,
+        icon: faCalendarAlt,
         href: "/awards/year-highlights",
         enabled: true,
       },
@@ -53,24 +56,24 @@ export const MenuList: IMenuList[] = [
   },
   {
     label: "Categories",
-    icon: faCaretRight,
+    icon: faLayerGroup,
     enabled: true,
     items: [
       {
         label: "E-Commerce",
-        icon: faCodeCommit,
+        icon: faShop,
         href: "/categories/e-commerce",
         enabled: true,
       },
       {
         label: "Gaming",
-        icon: faCalendar,
+        icon: faPuzzlePiece,
         href: "/categories/gaming",
         enabled: true,
       },
       {
         label: "Fashion",
-        icon: faCalendar,
+        icon: faVestPatches,
         href: "/categories/fashion",
         enabled: true,
       },
@@ -78,19 +81,19 @@ export const MenuList: IMenuList[] = [
   },
   {
     label: "Participate",
-    icon: faDashboard,
+    icon: faPersonBooth,
     href: "/participate",
     enabled: true,
   },
   {
     label: "My Rank",
-    icon: faRandom,
+    icon: faRankingStar,
     href: "/my-rank",
     enabled: true,
   },
   {
     label: "About",
-    icon: faAddressBook,
+    icon: faInbox,
     href: "/about",
     enabled: true,
   },
