@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import breadcrumbReducer from "./breadcrumb-slice";
+import { breadcrumbReducer } from "./breadcrumb-slice";
 
 export const store = configureStore({
   reducer: {

@@ -19,5 +19,4 @@ const breadcrumbSlice = createSlice({
 });
 
 export const { setBreadcrumbs } = breadcrumbSlice.actions;
-
-export default breadcrumbSlice.reducer;
+export const breadcrumbReducer = breadcrumbSlice.reducer;
