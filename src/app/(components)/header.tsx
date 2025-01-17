@@ -20,15 +20,15 @@ const Header: React.FC = () => {
     if (pathname === "/") {
       return [
         {
-          label: "Explore",
-          href: "/",
+          label: MenuList[0].label,
+          href: pathname,
         },
       ];
     }
 
     const pathBreadcrumbs = findBreadcrumbs(MenuList, pathname);
     return [
-      { label: "Explore", href: "/" },
+      { label: MenuList[0].label, href: "/" },
       ...pathBreadcrumbs.map((item) => ({
         label: item.label,
         href: "href" in item ? item.href : undefined,
