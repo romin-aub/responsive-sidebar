@@ -4,7 +4,6 @@ import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Sidebar from "./(components)/sidebar";
 import Header from "./(components)/header";
-import Providers from "@/store/providers";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
@@ -20,19 +19,17 @@ export const RootLayout: React.FC<
   return (
     <html lang="en">
       <body>
-        <Providers>
-          <div className="flex h-screen w-screen">
-            <div className="h-full w-2/12 shadow-md p-3">
-              <Sidebar />
-            </div>
-            <div className="h-full w-10/12">
-              <div className="h-14 w-full shadow-md">
-                <Header />
-              </div>
-              <main className="p-5">{children}</main>
-            </div>
+        <div className="flex h-screen w-screen">
+          <div className="h-full w-2/12 shadow-md p-3">
+            <Sidebar />
           </div>
-        </Providers>
+          <div className="h-full w-10/12">
+            <div className="h-14 w-full shadow-md">
+              <Header />
+            </div>
+            <main className="p-5">{children}</main>
+          </div>
+        </div>
       </body>
     </html>
   );

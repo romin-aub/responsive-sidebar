@@ -8,21 +8,40 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/breadcrumb";
-import { RootState } from "@/store/store";
-import React from "react";
-import { useSelector } from "react-redux";
+import findBreadcrumbs from "@/lib/find-breadcrumbs";
+import { MenuList } from "@/menu-list";
+import { usePathname } from "next/navigation";
+import React, { useMemo } from "react";
 
 const Header: React.FC = () => {
-  const breadcrumbs = useSelector(
-    (state: RootState) => state.breadcrumb.crumbs
-  );
+  const pathname = usePathname();
+
+  const breadcrumbs = useMemo(() => {
+    if (pathname === "/") {
+      return [
+        {
+          label: "Explore",
+          href: "/",
+        },
+      ];
+    }
+
+    const pathBreadcrumbs = findBreadcrumbs(MenuList, pathname);
+    return [
+      { label: "Explore", href: "/" },
+      ...pathBreadcrumbs.map((item) => ({
+        label: item.label,
+        href: "href" in item ? item.href : undefined,
+      })),
+    ];
+  }, [pathname]);
 
   return (
     <div className="pl-5 h-full flex justify-start items-center">
       <Breadcrumb>
         <BreadcrumbList>
           {breadcrumbs.map((crumb, index) => (
-            <React.Fragment key={crumb.href}>
+            <React.Fragment key={crumb.label}>
               <BreadcrumbItem>
                 {index < breadcrumbs.length - 1 ? (
                   <BreadcrumbLink href={crumb.href}>

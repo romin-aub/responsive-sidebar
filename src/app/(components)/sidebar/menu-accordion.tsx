@@ -11,7 +11,7 @@ import MenuItem from "./menu-item";
 interface IMenuAccordionProps {
   sidebarHeader: IMenuListHeader;
   activeMenu: string;
-  onClick: (label: string, href: string) => void;
+  onClick: (href: string) => void;
 }
 
 const MenuAccordion: React.FC<IMenuAccordionProps> = ({
