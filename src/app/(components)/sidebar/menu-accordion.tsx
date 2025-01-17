@@ -7,6 +7,7 @@ import {
 import { IMenuListHeader } from "@/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuItem from "./menu-item";
+import { useEffect, useState } from "react";
 
 interface IMenuAccordionProps {
   sidebarHeader: IMenuListHeader;
@@ -19,10 +20,29 @@ const MenuAccordion: React.FC<IMenuAccordionProps> = ({
   activeMenu,
   onClick,
 }) => {
-  const { label, icon, items } = sidebarHeader;
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    setIsOpen(
+      sidebarHeader.items.some((subItem) => subItem.href === activeMenu)
+    );
+  }, [activeMenu, sidebarHeader.items]);
+
+  const toggleAccordion = (value: string | null) => {
+    setIsOpen(value === label);
+  };
+
+  const { label, icon, enabled, items } = sidebarHeader;
+
+  if (!enabled) return null;
   return (
     <div>
-      <Accordion type="multiple">
+      <Accordion
+        type="single"
+        collapsible
+        value={isOpen ? label : ""}
+        onValueChange={toggleAccordion}
+      >
         <AccordionItem key={label} value={label}>
           <AccordionTrigger>
             <div className="flex justify-start items-center rounded-sm h-14 cursor-pointer hover:bg-gray-100">
@@ -36,9 +56,7 @@ const MenuAccordion: React.FC<IMenuAccordionProps> = ({
             {items.map((subItem) => (
               <MenuItem
                 key={subItem.label}
-                label={subItem.label}
-                icon={subItem.icon}
-                href={subItem.href}
+                item={subItem}
                 isActive={activeMenu === subItem.href}
                 onClick={onClick}
               />

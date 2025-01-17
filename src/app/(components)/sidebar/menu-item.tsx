@@ -1,22 +1,17 @@
 import { cn } from "@/lib/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { IMenuListItem } from "@/types";
 
 interface IMenuItemProps {
-  label: string;
-  icon: IconProp;
-  href: string;
+  item: IMenuListItem;
   isActive: boolean;
   onClick: (href: string) => void;
 }
 
-const MenuItem: React.FC<IMenuItemProps> = ({
-  label,
-  icon,
-  href,
-  isActive,
-  onClick,
-}) => {
+const MenuItem: React.FC<IMenuItemProps> = ({ item, isActive, onClick }) => {
+  const { label, icon, href, enabled } = item;
+
+  if (!enabled) return null;
   return (
     <div
       key={label}
@@ -24,7 +19,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({
         "flex justify-start items-center rounded-sm h-14 cursor-pointer hover:bg-gray-100",
         isActive && "bg-gray-200"
       )}
-      onClick={() => onClick(href!)}
+      onClick={() => onClick(href)}
     >
       <div className="h-full w-14 flex items-center justify-center">
         <FontAwesomeIcon icon={icon} size="xl" />
