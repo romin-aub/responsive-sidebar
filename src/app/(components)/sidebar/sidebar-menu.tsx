@@ -34,9 +34,7 @@ const SidebarMenu: React.FC = () => {
         ) : (
           <MenuItem
             key={item.label}
-            label={item.label}
-            icon={item.icon}
-            href={item.href}
+            item={item}
             isActive={activeMenu === item.href}
             onClick={handleItemClick}
           />

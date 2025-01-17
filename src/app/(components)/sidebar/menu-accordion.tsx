@@ -32,7 +32,9 @@ const MenuAccordion: React.FC<IMenuAccordionProps> = ({
     setIsOpen(value === label);
   };
 
-  const { label, icon, items } = sidebarHeader;
+  const { label, icon, enabled, items } = sidebarHeader;
+
+  if (!enabled) return null;
   return (
     <div>
       <Accordion
@@ -54,9 +56,7 @@ const MenuAccordion: React.FC<IMenuAccordionProps> = ({
             {items.map((subItem) => (
               <MenuItem
                 key={subItem.label}
-                label={subItem.label}
-                icon={subItem.icon}
-                href={subItem.href}
+                item={subItem}
                 isActive={activeMenu === subItem.href}
                 onClick={onClick}
               />
