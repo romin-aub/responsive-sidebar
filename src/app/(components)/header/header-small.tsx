@@ -11,10 +11,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SidebarHeader from "../sidebar/sidebar-header";
 import SidebarMenu from "../sidebar/sidebar-menu";
 import SidebarProfile from "../sidebar/sidebar-profile";
+import { useState } from "react";
 
 const HeaderSmall: React.FC = () => {
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
   return (
-    <Sheet>
+    <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
       <SheetTrigger>
         <FontAwesomeIcon icon={faBars} size="xl" />
       </SheetTrigger>
@@ -23,7 +26,7 @@ const HeaderSmall: React.FC = () => {
           <SidebarHeader />
         </SheetTitle>
         <div className="flex-1 overflow-auto lg:my-3 my-0">
-          <SidebarMenu />
+          <SidebarMenu closeSheet={() => setIsSheetOpen(false)} />
         </div>
         <SheetFooter>
           <SheetClose>
