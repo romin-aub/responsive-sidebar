@@ -20,10 +20,10 @@ export const RootLayout: React.FC<
     <html lang="en">
       <body>
         <div className="flex h-screen w-screen">
-          <div className="h-full w-2/12 shadow-md p-3">
+          <div className="h-full lg:w-2/12 w-0 p-0 overflow-hidden shadow-md lg:p-2">
             <Sidebar />
           </div>
-          <div className="h-full w-10/12">
+          <div className="h-full lg:w-10/12 w-full">
             <div className="h-14 w-full shadow-md">
               <Header />
             </div>
