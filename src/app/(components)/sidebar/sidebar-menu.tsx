@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import SidebarMenuAccordion from "./menu-accordion";
 import MenuItem from "./menu-item";
 
-const SidebarMenu: React.FC = () => {
+const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({ closeSheet }) => {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const router = useRouter();
@@ -19,6 +19,7 @@ const SidebarMenu: React.FC = () => {
   const handleItemClick = (href: string) => {
     setActiveMenu(href);
     router.push(href);
+    closeSheet?.();
   };
 
   return (
