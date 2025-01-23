@@ -28,7 +28,12 @@ const MenuItem: React.FC<IMenuItemProps> = ({
       )}
       onClick={() => onClick(href)}
     >
-      <div className="h-full w-14 flex items-center justify-center">
+      <div
+        className={cn(
+          "h-full flex items-center justify-center",
+          isAccordionItem ? "w-12" : "w-14"
+        )}
+      >
         <FontAwesomeIcon icon={icon} size="lg" />
       </div>
       <span className="text-base">{label}</span>
