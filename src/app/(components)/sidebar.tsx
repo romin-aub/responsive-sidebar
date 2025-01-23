@@ -8,7 +8,7 @@ const Sidebar: React.FC = () => {
   return (
     <div className="h-full flex flex-col">
       <SidebarHeader />
-      <div className="flex-1 overflow-auto my-3">
+      <div className="flex-1 overflow-auto scrollbar-none my-3">
         <SidebarMenu />
       </div>
       <SidebarProfile />
