@@ -57,6 +57,7 @@ const MenuAccordion: React.FC<IMenuAccordionProps> = ({
               <MenuItem
                 key={subItem.label}
                 item={subItem}
+                isAccordionItem
                 isActive={activeMenu === subItem.href}
                 onClick={onClick}
               />
