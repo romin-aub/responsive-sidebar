@@ -36,6 +36,7 @@ const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({ closeSheet }) => {
           <MenuItem
             key={item.label}
             item={item}
+            isAccordionItem={false}
             isActive={activeMenu === item.href}
             onClick={handleItemClick}
           />

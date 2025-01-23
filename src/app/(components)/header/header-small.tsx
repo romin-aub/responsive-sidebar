@@ -25,7 +25,7 @@ const HeaderSmall: React.FC = () => {
         <SheetTitle>
           <SidebarHeader />
         </SheetTitle>
-        <div className="flex-1 overflow-auto lg:my-3 my-0">
+        <div className="flex-1 overflow-auto scrollbar-none lg:my-3 my-0">
           <SidebarMenu closeSheet={() => setIsSheetOpen(false)} />
         </div>
         <SheetFooter>
