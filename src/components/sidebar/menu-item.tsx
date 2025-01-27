@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IMenuListItem } from "@/types";
+import { IMenuListItem } from "@/types/menu-type";
 
 interface IMenuItemProps {
   item: IMenuListItem;

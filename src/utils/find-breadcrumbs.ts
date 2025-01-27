@@ -1,4 +1,4 @@
-import { IMenuList } from "@/types";
+import { IMenuList } from "@/types/menu-type";
 
 const findBreadcrumbs = (menus: IMenuList[], href: string): IMenuList[] => {
   for (const menu of menus) {

@@ -6,8 +6,8 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/breadcrumb";
-import findBreadcrumbs from "@/lib/find-breadcrumbs";
-import { MenuList } from "@/menu-list";
+import findBreadcrumbs from "@/utils/find-breadcrumbs";
+import { MenuList } from "@/config/menu";
 import { usePathname } from "next/navigation";
 import React, { useMemo } from "react";
 

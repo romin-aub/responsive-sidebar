@@ -4,7 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/accordion";
-import { IMenuListHeader } from "@/types";
+import { IMenuListHeader } from "@/types/menu-type";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuItem from "./menu-item";
 import { useEffect, useState } from "react";

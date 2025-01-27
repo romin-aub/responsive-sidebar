@@ -1,4 +1,4 @@
-import { IMenuList } from "./types";
+import { IMenuList } from "../types/menu-type";
 import {
   faAward,
   faCalendarAlt,

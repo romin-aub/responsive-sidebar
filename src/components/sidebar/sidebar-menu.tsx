@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MenuList } from "@/menu-list";
+import { MenuList } from "@/config/menu";
 
 import { usePathname, useRouter } from "next/navigation";
 import SidebarMenuAccordion from "./menu-accordion";
