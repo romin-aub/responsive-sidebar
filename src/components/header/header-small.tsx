@@ -1,17 +1,17 @@
 import {
   Sheet,
-  SheetTrigger,
-  SheetContent,
-  SheetTitle,
-  SheetFooter,
   SheetClose,
-} from "@/core/overlay/sheet";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SidebarHeader from "../sidebar/sidebar-header";
-import SidebarMenu from "../sidebar/sidebar-menu";
-import SidebarProfile from "../sidebar/sidebar-profile";
-import { useState } from "react";
+  SheetContent,
+  SheetFooter,
+  SheetTitle,
+  SheetTrigger,
+} from '@/core/overlay/sheet';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
+import SidebarHeader from '../sidebar/sidebar-header';
+import SidebarMenu from '../sidebar/sidebar-menu';
+import SidebarProfile from '../sidebar/sidebar-profile';
 
 const HeaderSmall: React.FC = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
@@ -19,13 +19,13 @@ const HeaderSmall: React.FC = () => {
   return (
     <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
       <SheetTrigger>
-        <FontAwesomeIcon icon={faBars} size="xl" />
+        <FontAwesomeIcon icon={faBars} size='xl' />
       </SheetTrigger>
-      <SheetContent className="h-full flex flex-col lg:hidden">
+      <SheetContent className='h-full flex flex-col lg:hidden'>
         <SheetTitle>
           <SidebarHeader />
         </SheetTitle>
-        <div className="flex-1 overflow-auto scrollbar-none lg:my-3 my-0">
+        <div className='flex-1 overflow-auto scrollbar-none lg:my-3 my-0'>
           <SidebarMenu closeSheet={() => setIsSheetOpen(false)} />
         </div>
         <SheetFooter>

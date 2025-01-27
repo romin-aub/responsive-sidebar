@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@/styles/globals.css";
-import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from '@fortawesome/fontawesome-svg-core';
+import type { Metadata } from 'next';
+import '@/styles/globals.css';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
-  title: "Awwwards",
+  title: 'Awwwards',
 };
 
 export const RootLayout: React.FC<
@@ -14,7 +14,7 @@ export const RootLayout: React.FC<
   }>
 > = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>{children}</body>
     </html>
   );

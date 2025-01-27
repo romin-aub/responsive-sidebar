@@ -3,11 +3,11 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/core/data-display/accordion";
-import { IMenuListHeader } from "@/types/menu-type";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import MenuItem from "./menu-item";
-import { useEffect, useState } from "react";
+} from '@/core/data-display/accordion';
+import type { IMenuListHeader } from '@/types/menu-type';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useEffect, useState } from 'react';
+import MenuItem from './menu-item';
 
 interface IMenuAccordionProps {
   sidebarHeader: IMenuListHeader;
@@ -24,7 +24,7 @@ const MenuAccordion: React.FC<IMenuAccordionProps> = ({
 
   useEffect(() => {
     setIsOpen(
-      sidebarHeader.items.some((subItem) => subItem.href === activeMenu)
+      sidebarHeader.items.some((subItem) => subItem.href === activeMenu),
     );
   }, [activeMenu, sidebarHeader.items]);
 
@@ -38,18 +38,18 @@ const MenuAccordion: React.FC<IMenuAccordionProps> = ({
   return (
     <div>
       <Accordion
-        type="single"
+        type='single'
         collapsible
-        value={isOpen ? label : ""}
+        value={isOpen ? label : ''}
         onValueChange={toggleAccordion}
       >
         <AccordionItem key={label} value={label}>
           <AccordionTrigger>
-            <div className="flex justify-start items-center rounded-sm h-14 cursor-pointer hover:bg-gray-100">
-              <div className="h-full w-14 flex items-center justify-center">
-                <FontAwesomeIcon icon={icon} size="xl" />
+            <div className='flex justify-start items-center rounded-sm h-14 cursor-pointer hover:bg-gray-100'>
+              <div className='h-full w-14 flex items-center justify-center'>
+                <FontAwesomeIcon icon={icon} size='xl' />
               </div>
-              <span className="text-base">{label}</span>
+              <span className='text-base'>{label}</span>
             </div>
           </AccordionTrigger>
           <AccordionContent>

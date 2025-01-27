@@ -1,4 +1,3 @@
-import { IMenuList } from "../types/menu-type";
 import {
   faAward,
   faCalendarAlt,
@@ -14,93 +13,94 @@ import {
   faRankingStar,
   faShop,
   faVestPatches,
-} from "@fortawesome/free-solid-svg-icons";
+} from '@fortawesome/free-solid-svg-icons';
+import type { IMenuList } from '../types/menu-type';
 
 export const MenuList: IMenuList[] = [
   {
-    label: "Explore",
+    label: 'Explore',
     icon: faHome,
-    href: "/",
+    href: '/',
     enabled: true,
   },
   {
-    label: "Awards",
+    label: 'Awards',
     icon: faAward,
     enabled: true,
     items: [
       {
-        label: "Nominees",
+        label: 'Nominees',
         icon: faPeopleGroup,
-        href: "/awards/nominees",
+        href: '/awards/nominees',
         enabled: true,
       },
       {
-        label: "Day Highlights",
+        label: 'Day Highlights',
         icon: faCalendarDay,
-        href: "/awards/day-highlights",
+        href: '/awards/day-highlights',
         enabled: true,
       },
       {
-        label: "Month Highlights",
+        label: 'Month Highlights',
         icon: faCalendarWeek,
-        href: "/awards/month-highlights",
+        href: '/awards/month-highlights',
         enabled: true,
       },
       {
-        label: "Year Highlights",
+        label: 'Year Highlights',
         icon: faCalendarAlt,
-        href: "/awards/year-highlights",
+        href: '/awards/year-highlights',
         enabled: true,
       },
     ],
   },
   {
-    label: "Categories",
+    label: 'Categories',
     icon: faLayerGroup,
     enabled: true,
     items: [
       {
-        label: "E-Commerce",
+        label: 'E-Commerce',
         icon: faShop,
-        href: "/categories/e-commerce",
+        href: '/categories/e-commerce',
         enabled: true,
       },
       {
-        label: "Gaming",
+        label: 'Gaming',
         icon: faPuzzlePiece,
-        href: "/categories/gaming",
+        href: '/categories/gaming',
         enabled: true,
       },
       {
-        label: "Fashion",
+        label: 'Fashion',
         icon: faVestPatches,
-        href: "/categories/fashion",
+        href: '/categories/fashion',
         enabled: true,
       },
     ],
   },
   {
-    label: "Participate",
+    label: 'Participate',
     icon: faPersonBooth,
-    href: "/participate",
+    href: '/participate',
     enabled: true,
   },
   {
-    label: "My Rank",
+    label: 'My Rank',
     icon: faRankingStar,
-    href: "/my-rank",
+    href: '/my-rank',
     enabled: true,
   },
   {
-    label: "About",
+    label: 'About',
     icon: faInbox,
-    href: "/about",
+    href: '/about',
     enabled: true,
   },
   {
-    label: "Contact-Us",
+    label: 'Contact-Us',
     icon: faContactBook,
-    href: "/contact-us",
+    href: '/contact-us',
     enabled: true,
   },
 ];

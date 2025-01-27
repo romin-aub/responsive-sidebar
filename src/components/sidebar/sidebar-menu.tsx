@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useEffect, useState } from "react";
-import { MenuList } from "@/config/menu";
+import { MenuList } from '@/config/menu';
+import { useEffect, useState } from 'react';
 
-import { usePathname, useRouter } from "next/navigation";
-import SidebarMenuAccordion from "./menu-accordion";
-import MenuItem from "./menu-item";
+import { usePathname, useRouter } from 'next/navigation';
+import SidebarMenuAccordion from './menu-accordion';
+import MenuItem from './menu-item';
 
 const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({ closeSheet }) => {
   const pathname = usePathname();
@@ -25,11 +25,11 @@ const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({ closeSheet }) => {
   return (
     <div>
       {MenuList.map((item) =>
-        "items" in item ? (
+        'items' in item ? (
           <SidebarMenuAccordion
             key={item.label}
             sidebarHeader={item}
-            activeMenu={activeMenu || ""}
+            activeMenu={activeMenu || ''}
             onClick={handleItemClick}
           />
         ) : (
@@ -40,7 +40,7 @@ const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({ closeSheet }) => {
             isActive={activeMenu === item.href}
             onClick={handleItemClick}
           />
-        )
+        ),
       )}
     </div>
   );

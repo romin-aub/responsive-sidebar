@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "check": "biome check .",
+    "format": "biome format --write .",
+    "lint": "biome lint --write .",
+    "fix": "biome check --write ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -28,6 +31,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",

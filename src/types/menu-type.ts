@@ -1,4 +1,4 @@
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 export interface IMenuListItem {
   label: string; // title or label
@@ -8,7 +8,7 @@ export interface IMenuListItem {
   tooltip?: string; // extra info as tooltip
 }
 
-export interface IMenuListHeader extends Omit<IMenuListItem, "href"> {
+export interface IMenuListHeader extends Omit<IMenuListItem, 'href'> {
   items: IMenuListItem[];
 }
 
