@@ -15,6 +15,7 @@
     "ui": "@/components",
     "utils": "@/utils",
     "lib": "@/lib",
-    "styles": "@/styles"
+    "styles": "@/styles",
+    "core": "@/core"
   }
 }

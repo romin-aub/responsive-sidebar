@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import HeaderSmall from "./header/header-small";
-import HeaderBreadcrumb from "./header/header-breadcrumb";
+import HeaderBreadcrumb from "./header-breadcrumb";
+import HeaderSmall from "./header-small";
 
 const Header: React.FC = () => {
   return (

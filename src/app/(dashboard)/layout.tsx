@@ -1,5 +1,5 @@
-import Header from "@/components/header";
-import Sidebar from "@/components/sidebar";
+import Header from "@/components/header/header";
+import Sidebar from "@/components/sidebar/sidebar";
 
 export const DashboardLayout: React.FC<
   Readonly<{

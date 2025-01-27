@@ -3,7 +3,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/accordion";
+} from "@/core/data-display/accordion";
 import { IMenuListHeader } from "@/types/menu-type";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MenuItem from "./menu-item";

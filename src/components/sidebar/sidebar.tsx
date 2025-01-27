@@ -1,8 +1,8 @@
 "use client";
 
-import SidebarMenu from "./sidebar/sidebar-menu";
-import SidebarHeader from "./sidebar/sidebar-header";
-import SidebarProfile from "./sidebar/sidebar-profile";
+import SidebarHeader from "./sidebar-header";
+import SidebarMenu from "./sidebar-menu";
+import SidebarProfile from "./sidebar-profile";
 
 const Sidebar: React.FC = () => {
   return (

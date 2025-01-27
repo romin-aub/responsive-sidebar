@@ -5,7 +5,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/breadcrumb";
+} from "@/core/navigation/breadcrumb";
 import findBreadcrumbs from "@/utils/find-breadcrumbs";
 import { MenuList } from "@/config/menu";
 import { usePathname } from "next/navigation";

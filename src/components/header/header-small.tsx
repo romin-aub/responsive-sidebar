@@ -5,7 +5,7 @@ import {
   SheetTitle,
   SheetFooter,
   SheetClose,
-} from "@/components/sheet";
+} from "@/core/overlay/sheet";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SidebarHeader from "../sidebar/sidebar-header";
