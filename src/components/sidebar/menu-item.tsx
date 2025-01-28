@@ -2,14 +2,14 @@ import { cn } from '@/lib/utils';
 import type { IMenuListItem } from '@/types/menu-type';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-interface IMenuItemProps {
+export interface IMenuItemProps {
   item: IMenuListItem;
   isAccordionItem: boolean;
   isActive: boolean;
   onClick: (href: string) => void;
 }
 
-const MenuItem: React.FC<IMenuItemProps> = ({
+export const MenuItem: React.FC<IMenuItemProps> = ({
   item,
   isAccordionItem,
   isActive,
@@ -41,5 +41,3 @@ const MenuItem: React.FC<IMenuItemProps> = ({
     </button>
   );
 };
-
-export default MenuItem;

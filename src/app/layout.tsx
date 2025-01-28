@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Awwwards',
 };
 
-export const RootLayout: React.FC<
+const RootLayout: React.FC<
   Readonly<{
     children: React.ReactNode;
   }>
@@ -16,7 +16,9 @@ export const RootLayout: React.FC<
   return (
     <html lang='en'>
       <body
-        className={process.env.ENV === 'development' ? 'debug-screens' : ''}
+        className={
+          process.env.NODE_ENV === 'development' ? 'debug-screens' : ''
+        }
       >
         {children}
       </body>

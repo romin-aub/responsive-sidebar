@@ -2,7 +2,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/navigation';
 
-const SidebarProfile: React.FC<{ closeSheet?: () => void }> = ({
+export const SidebarProfile: React.FC<{ closeSheet?: () => void }> = ({
   closeSheet,
 }) => {
   const router = useRouter();
@@ -22,5 +22,3 @@ const SidebarProfile: React.FC<{ closeSheet?: () => void }> = ({
     </button>
   );
 };
-
-export default SidebarProfile;

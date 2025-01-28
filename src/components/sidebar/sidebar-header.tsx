@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const SidebarHeader: React.FC = () => {
+export const SidebarHeader: React.FC = () => {
   return (
     <div className='p-2 flex items-center justify-start gap-2 lg:gap-3'>
       <Image
@@ -14,5 +14,3 @@ const SidebarHeader: React.FC = () => {
     </div>
   );
 };
-
-export default SidebarHeader;
