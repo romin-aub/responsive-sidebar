@@ -11,7 +11,7 @@ const SidebarProfile: React.FC = () => {
   return (
     <button
       type='button'
-      className='p-2 flex items-center justify-center gap-4 border-2 cursor-pointer'
+      className='p-2 flex items-center w-full justify-center gap-4 border-2 cursor-pointer'
       onClick={handleProfileClick}
     >
       <FontAwesomeIcon icon={faUser} />
