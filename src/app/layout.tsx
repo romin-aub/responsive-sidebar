@@ -15,7 +15,11 @@ export const RootLayout: React.FC<
 > = ({ children }) => {
   return (
     <html lang='en'>
-      <body>{children}</body>
+      <body
+        className={process.env.ENV === 'development' ? 'debug-screens' : ''}
+      >
+        {children}
+      </body>
     </html>
   );
 };

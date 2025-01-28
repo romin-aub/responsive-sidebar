@@ -1,6 +1,8 @@
 import type { Config } from 'tailwindcss';
 
 export default {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  plugins: [require('tailwindcss-debug-screens')],
   darkMode: ['class'],
   content: [
     './src/core/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,6 +10,18 @@ export default {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    debugScreens: {
+      position: ['bottom', 'right'],
+      style: {
+        background: 'black',
+        color: 'white',
+        margin: '1rem',
+        padding: '1rem',
+        fontSize: '1rem',
+        borderRadius: '1rem',
+      },
+      selector: '.debug-screens',
+    },
     extend: {
       colors: {
         background: 'hsl(var(--background))',
