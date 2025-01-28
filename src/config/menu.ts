@@ -39,13 +39,13 @@ export const MenuList: IMenuList[] = [
         enabled: true,
         items: [
           {
-            label: 'Most Rated Nominees',
+            label: 'Most Rated',
             icon: faStar,
             href: '/awards/nominees/most-rated',
             enabled: true,
           },
           {
-            label: 'Competitive Nominees',
+            label: 'Competitive',
             icon: faStarOfLife,
             href: '/awards/nominees/competitive',
             enabled: true,
