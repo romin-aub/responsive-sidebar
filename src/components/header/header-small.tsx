@@ -1,6 +1,5 @@
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetFooter,
   SheetTitle,
@@ -29,9 +28,7 @@ const HeaderSmall: React.FC = () => {
           <SidebarMenu closeSheet={() => setIsSheetOpen(false)} />
         </div>
         <SheetFooter>
-          <SheetClose>
-            <SidebarProfile />
-          </SheetClose>
+          <SidebarProfile closeSheet={() => setIsSheetOpen(false)} />
         </SheetFooter>
       </SheetContent>
     </Sheet>
