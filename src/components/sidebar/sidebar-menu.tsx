@@ -5,9 +5,11 @@ import { useEffect, useState } from 'react';
 
 import { usePathname, useRouter } from 'next/navigation';
 import SidebarMenuAccordion from './menu-accordion';
-import MenuItem from './menu-item';
+import { MenuItem } from './menu-item';
 
-const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({ closeSheet }) => {
+export const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({
+  closeSheet,
+}) => {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const router = useRouter();
@@ -45,5 +47,3 @@ const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({ closeSheet }) => {
     </div>
   );
 };
-
-export default SidebarMenu;

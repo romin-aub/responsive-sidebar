@@ -1,10 +1,10 @@
 'use client';
 
-import SidebarHeader from './sidebar-header';
-import SidebarMenu from './sidebar-menu';
-import SidebarProfile from './sidebar-profile';
+import { SidebarHeader } from './sidebar-header';
+import { SidebarMenu } from './sidebar-menu';
+import { SidebarProfile } from './sidebar-profile';
 
-const Sidebar: React.FC = () => {
+export const Sidebar: React.FC = () => {
   return (
     <div className='h-full flex flex-col'>
       <SidebarHeader />
@@ -15,5 +15,3 @@ const Sidebar: React.FC = () => {
     </div>
   );
 };
-
-export default Sidebar;

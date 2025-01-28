@@ -7,7 +7,7 @@ import {
 import type { IMenuListHeader } from '@/types/menu-type';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
-import MenuItem from './menu-item';
+import { MenuItem } from './menu-item';
 
 interface IMenuAccordionProps {
   sidebarHeader: IMenuListHeader;
