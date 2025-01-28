@@ -1,13 +1,14 @@
 'use client';
 
 import { MenuList } from '@/config/menu';
-import { useEffect, useState } from 'react';
-
 import { usePathname, useRouter } from 'next/navigation';
-import SidebarMenuAccordion from './menu-accordion';
-import MenuItem from './menu-item';
+import { useEffect, useState } from 'react';
+import { MenuAccordion } from './menu-accordion';
+import { MenuItem } from './menu-item';
 
-const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({ closeSheet }) => {
+export const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({
+  closeSheet,
+}) => {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const router = useRouter();
@@ -26,7 +27,7 @@ const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({ closeSheet }) => {
     <div>
       {MenuList.map((item) =>
         'items' in item ? (
-          <SidebarMenuAccordion
+          <MenuAccordion
             key={item.label}
             sidebarHeader={item}
             activeMenu={activeMenu || ''}
@@ -45,5 +46,3 @@ const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({ closeSheet }) => {
     </div>
   );
 };
-
-export default SidebarMenu;

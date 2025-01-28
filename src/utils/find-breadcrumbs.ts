@@ -1,6 +1,9 @@
 import type { IMenuList } from '@/types/menu-type';
 
-const findBreadcrumbs = (menus: IMenuList[], href: string): IMenuList[] => {
+export const findBreadcrumbs = (
+  menus: IMenuList[],
+  href: string,
+): IMenuList[] => {
   for (const menu of menus) {
     if ('href' in menu && menu.href === href) {
       return [menu];
@@ -14,5 +17,3 @@ const findBreadcrumbs = (menus: IMenuList[], href: string): IMenuList[] => {
   }
   return [];
 };
-
-export default findBreadcrumbs;

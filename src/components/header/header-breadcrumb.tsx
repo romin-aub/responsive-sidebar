@@ -7,11 +7,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/core/navigation/breadcrumb';
-import findBreadcrumbs from '@/utils/find-breadcrumbs';
+import { findBreadcrumbs } from '@/utils/find-breadcrumbs';
 import { usePathname } from 'next/navigation';
 import React, { useMemo } from 'react';
 
-const HeaderBreadcrumb: React.FC = () => {
+export const HeaderBreadcrumb: React.FC = () => {
   const pathname = usePathname();
 
   const breadcrumbs = useMemo(() => {
@@ -52,5 +52,3 @@ const HeaderBreadcrumb: React.FC = () => {
     </Breadcrumb>
   );
 };
-
-export default HeaderBreadcrumb;

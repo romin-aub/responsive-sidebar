@@ -8,11 +8,11 @@ import {
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
-import SidebarHeader from '../sidebar/sidebar-header';
-import SidebarMenu from '../sidebar/sidebar-menu';
-import SidebarProfile from '../sidebar/sidebar-profile';
+import { SidebarHeader } from '../sidebar/sidebar-header';
+import { SidebarMenu } from '../sidebar/sidebar-menu';
+import { SidebarProfile } from '../sidebar/sidebar-profile';
 
-const HeaderSmall: React.FC = () => {
+export const HeaderSmall: React.FC = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
 
   return (
@@ -34,5 +34,3 @@ const HeaderSmall: React.FC = () => {
     </Sheet>
   );
 };
-
-export default HeaderSmall;

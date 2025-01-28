@@ -1,9 +1,9 @@
 'use client';
 
-import HeaderBreadcrumb from './header-breadcrumb';
-import HeaderSmall from './header-small';
+import { HeaderBreadcrumb } from './header-breadcrumb';
+import { HeaderSmall } from './header-small';
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   return (
     <div className='pl-5 h-full flex justify-start gap-4 items-center'>
       <div className='lg:hidden'>
@@ -13,5 +13,3 @@ const Header: React.FC = () => {
     </div>
   );
 };
-
-export default Header;
