@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: 'Awwwards',
 };
 
-export const RootLayout: React.FC<
+const RootLayout: React.FC<
   Readonly<{
     children: React.ReactNode;
   }>
