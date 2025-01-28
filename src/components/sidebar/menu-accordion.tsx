@@ -9,13 +9,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import { MenuItem } from './menu-item';
 
-interface IMenuAccordionProps {
+export interface IMenuAccordionProps {
   sidebarHeader: IMenuListHeader;
   activeMenu: string;
   onClick: (href: string) => void;
 }
 
-const MenuAccordion: React.FC<IMenuAccordionProps> = ({
+export const MenuAccordion: React.FC<IMenuAccordionProps> = ({
   sidebarHeader,
   activeMenu,
   onClick,
@@ -85,5 +85,3 @@ const MenuAccordion: React.FC<IMenuAccordionProps> = ({
     </div>
   );
 };
-
-export default MenuAccordion;
