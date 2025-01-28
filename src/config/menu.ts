@@ -1,5 +1,6 @@
 import {
   faAward,
+  faBoltLightning,
   faCalendarAlt,
   faCalendarDay,
   faCalendarWeek,
@@ -7,11 +8,15 @@ import {
   faHome,
   faInbox,
   faLayerGroup,
+  faLightbulb,
+  faMagicWandSparkles,
   faPeopleGroup,
   faPersonBooth,
   faPuzzlePiece,
   faRankingStar,
   faShop,
+  faStar,
+  faStarOfLife,
   faVestPatches,
 } from '@fortawesome/free-solid-svg-icons';
 import type { IMenuList } from '../types/menu-type';
@@ -31,26 +36,96 @@ export const MenuList: IMenuList[] = [
       {
         label: 'Nominees',
         icon: faPeopleGroup,
-        href: '/awards/nominees',
         enabled: true,
+        items: [
+          {
+            label: 'Most Rated Nominees',
+            icon: faStar,
+            href: '/awards/nominees/most-rated',
+            enabled: true,
+          },
+          {
+            label: 'Competitive Nominees',
+            icon: faStarOfLife,
+            href: '/awards/nominees/competitive',
+            enabled: true,
+          },
+        ],
       },
       {
         label: 'Day Highlights',
         icon: faCalendarDay,
-        href: '/awards/day-highlights',
         enabled: true,
+        items: [
+          {
+            label: 'Most Popular',
+            icon: faBoltLightning,
+            href: '/awards/day-highlights/popular',
+            enabled: true,
+          },
+          {
+            label: 'Most Creative',
+            icon: faLightbulb,
+            href: '/awards/day-highlights/creative',
+            enabled: true,
+          },
+          {
+            label: 'Most Innovative',
+            icon: faMagicWandSparkles,
+            href: '/awards/day-highlights/innovative',
+            enabled: true,
+          },
+        ],
       },
       {
         label: 'Month Highlights',
         icon: faCalendarWeek,
-        href: '/awards/month-highlights',
         enabled: true,
+        items: [
+          {
+            label: 'Most Popular',
+            icon: faBoltLightning,
+            href: '/awards/month-highlights/popular',
+            enabled: true,
+          },
+          {
+            label: 'Most Creative',
+            icon: faLightbulb,
+            href: '/awards/month-highlights/creative',
+            enabled: true,
+          },
+          {
+            label: 'Most Innovative',
+            icon: faMagicWandSparkles,
+            href: '/awards/month-highlights/innovative',
+            enabled: true,
+          },
+        ],
       },
       {
         label: 'Year Highlights',
         icon: faCalendarAlt,
-        href: '/awards/year-highlights',
         enabled: true,
+        items: [
+          {
+            label: 'Most Popular',
+            icon: faBoltLightning,
+            href: '/awards/year-highlights/popular',
+            enabled: true,
+          },
+          {
+            label: 'Most Creative',
+            icon: faLightbulb,
+            href: '/awards/year-highlights/creative',
+            enabled: true,
+          },
+          {
+            label: 'Most Innovative',
+            icon: faMagicWandSparkles,
+            href: '/awards/year-highlights/innovative',
+            enabled: true,
+          },
+        ],
       },
     ],
   },

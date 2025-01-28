@@ -24,7 +24,15 @@ const MenuAccordion: React.FC<IMenuAccordionProps> = ({
 
   useEffect(() => {
     setIsOpen(
-      sidebarHeader.items.some((subItem) => subItem.href === activeMenu),
+      sidebarHeader.items.some((subItem) => {
+        if ('items' in subItem) {
+          return subItem.items.some((subSubItem) => {
+            if ('items' in subSubItem) return;
+            return subSubItem.href === activeMenu;
+          });
+        }
+        return subItem.href === activeMenu;
+      }),
     );
   }, [activeMenu, sidebarHeader.items]);
 
@@ -53,15 +61,24 @@ const MenuAccordion: React.FC<IMenuAccordionProps> = ({
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            {items.map((subItem) => (
-              <MenuItem
-                key={subItem.label}
-                item={subItem}
-                isAccordionItem
-                isActive={activeMenu === subItem.href}
-                onClick={onClick}
-              />
-            ))}
+            {items.map((subItem) =>
+              'items' in subItem ? (
+                <MenuAccordion
+                  key={subItem.label}
+                  sidebarHeader={subItem}
+                  activeMenu={activeMenu}
+                  onClick={onClick}
+                />
+              ) : (
+                <MenuItem
+                  key={subItem.label}
+                  item={subItem}
+                  isAccordionItem
+                  isActive={activeMenu === subItem.href}
+                  onClick={onClick}
+                />
+              ),
+            )}
           </AccordionContent>
         </AccordionItem>
       </Accordion>

@@ -9,7 +9,7 @@ export interface IMenuListItem {
 }
 
 export interface IMenuListHeader extends Omit<IMenuListItem, 'href'> {
-  items: IMenuListItem[];
+  items: (IMenuListItem | IMenuListHeader)[];
 }
 
 export type IMenuList = IMenuListItem | IMenuListHeader;
