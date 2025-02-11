@@ -2,6 +2,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { Providers } from '@/store/providers';
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ const RootLayout: React.FC<
           process.env.NODE_ENV === 'development' ? 'debug-screens' : ''
         }
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

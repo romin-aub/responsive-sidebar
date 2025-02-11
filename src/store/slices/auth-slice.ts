@@ -1,3 +1,4 @@
+import { StorageResolver } from '@/lib/storage';
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface IAuthState {
@@ -23,15 +24,26 @@ export const authSlice = createSlice({
       const { username, token } = action.payload;
       state.isAuthenticated = true;
       state.user = { username };
-      localStorage.setItem('token', token);
+      StorageResolver.set('token', token);
+      StorageResolver.set('user', JSON.stringify({ username }));
     },
     logout: (state) => {
       state.isAuthenticated = false;
       state.user = null;
+      StorageResolver.remove('token');
+      StorageResolver.remove('user');
+    },
+    checkAuth: (state) => {
+      const token = StorageResolver.get('token');
+      const user = StorageResolver.get('user');
+      if (token && user) {
+        state.isAuthenticated = true;
+        state.user = JSON.parse(user);
+      }
     },
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout, checkAuth } = authSlice.actions;
 
 export default authSlice.reducer;
