@@ -22,8 +22,7 @@ const LoginPage = () => {
   const router = useRouter();
 
   const onSubmit = (data: ILoginProps) => {
-    const token = 'dummy-token';
-    dispatch(login({ username: data.username, token }));
+    dispatch(login({ username: data.username, token: btoa(data.username) }));
     router.push('/');
   };
 

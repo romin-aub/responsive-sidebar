@@ -1,4 +1,5 @@
 import { StorageResolver } from '@/lib/storage';
+import { verifyToken } from '@/utils/verify-token';
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface IAuthState {
@@ -37,8 +38,16 @@ export const authSlice = createSlice({
       const token = StorageResolver.get('token');
       const user = StorageResolver.get('user');
       if (token && user) {
+        const isTokenVerified = verifyToken(token, JSON.parse(user).username);
+        if (!isTokenVerified) {
+          state.isAuthenticated = false;
+          state.user = null;
+        }
         state.isAuthenticated = true;
         state.user = JSON.parse(user);
+      } else {
+        state.isAuthenticated = false;
+        state.user = null;
       }
     },
   },
