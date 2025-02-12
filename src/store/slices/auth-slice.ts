@@ -37,18 +37,10 @@ export const authSlice = createSlice({
     checkAuth: (state) => {
       const token = StorageResolver.get('token');
       const user = StorageResolver.get('user');
-      if (token && user) {
-        const isTokenVerified = verifyToken(token, JSON.parse(user).username);
-        if (!isTokenVerified) {
-          state.isAuthenticated = false;
-          state.user = null;
-        }
-        state.isAuthenticated = true;
-        state.user = JSON.parse(user);
-      } else {
-        state.isAuthenticated = false;
-        state.user = null;
-      }
+      const parsedUser = user ? JSON.parse(user) : null;
+      state.isAuthenticated =
+        token && parsedUser ? verifyToken(token, parsedUser.username) : false;
+      state.user = state.isAuthenticated ? parsedUser : null;
     },
   },
 });

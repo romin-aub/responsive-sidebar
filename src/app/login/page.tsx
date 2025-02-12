@@ -3,10 +3,12 @@
 import { Label } from '@/core/data-display/label';
 import { Button } from '@/core/inputs/button';
 import { Input } from '@/core/inputs/input';
-import { login } from '@/store/slices/auth-slice';
+import { checkAuth, login } from '@/store/slices/auth-slice';
+import type { RootState } from '@/store/store';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 interface ILoginProps {
   username: string;
@@ -20,12 +22,25 @@ const LoginPage = () => {
   } = useForm<ILoginProps>();
   const dispatch = useDispatch();
   const router = useRouter();
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.auth.isAuthenticated,
+  );
+
+  useEffect(() => {
+    dispatch(checkAuth());
+    if (isAuthenticated) {
+      router.push('/');
+    }
+  }, [dispatch, isAuthenticated, router]);
 
   const onSubmit = (data: ILoginProps) => {
     dispatch(login({ username: data.username, token: btoa(data.username) }));
     router.push('/');
   };
 
+  if (isAuthenticated) {
+    return null;
+  }
   return (
     <div className='min-h-screen flex items-center justify-center bg-gray-100'>
       <form

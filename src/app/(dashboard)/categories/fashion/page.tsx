@@ -1,5 +1,8 @@
+'use client';
+
+import { AuthCheck } from '@/app/(dashboard)/auth-check';
 const Fashion: React.FC = () => {
   return <div>Fashion</div>;
 };
 
-export default Fashion;
+export default AuthCheck(Fashion);
