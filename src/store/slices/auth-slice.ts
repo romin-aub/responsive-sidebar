@@ -14,6 +14,15 @@ const initialState: IAuthState = {
   user: null,
 };
 
+const safeParse = (str: string | null) => {
+  if (!str) return null;
+  try {
+    return JSON.parse(str);
+  } catch {
+    return null;
+  }
+};
+
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -37,7 +46,7 @@ export const authSlice = createSlice({
     checkAuth: (state) => {
       const token = StorageResolver.get('token');
       const user = StorageResolver.get('user');
-      const parsedUser = user ? JSON.parse(user) : null;
+      const parsedUser = safeParse(user);
       state.isAuthenticated =
         token && parsedUser ? verifyToken(token, parsedUser.username) : false;
       state.user = state.isAuthenticated ? parsedUser : null;
