@@ -6,6 +6,7 @@ export interface IMenuListItem {
   href: string; // route to
   enabled: boolean; // says if route is enabled
   tooltip?: string; // extra info as tooltip
+  roles: number[]; // roles allowed
 }
 
 export interface IMenuListHeader extends Omit<IMenuListItem, 'href'> {
