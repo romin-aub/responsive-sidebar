@@ -1,5 +1,9 @@
+'use client';
+
+import { AuthCheck } from '../auth-check';
+
 const MyRank: React.FC = () => {
   return <div>MyRank</div>;
 };
 
-export default MyRank;
+export default AuthCheck(MyRank);

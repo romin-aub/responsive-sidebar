@@ -6,7 +6,7 @@ import {
   DropdownMenuTrigger,
 } from '@/core/inputs/dropdown-menu';
 import { cn } from '@/lib/utils';
-import { setRole } from '@/store/role-slice';
+import { setRole } from '@/store/slices/role-slice';
 import type { RootState } from '@/store/store';
 import { faChevronDown, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
