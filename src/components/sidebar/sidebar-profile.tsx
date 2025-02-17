@@ -1,11 +1,14 @@
+import type { RootState } from '@/store/store';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/navigation';
+import { useSelector } from 'react-redux';
 
 export const SidebarProfile: React.FC<{ closeSheet?: () => void }> = ({
   closeSheet,
 }) => {
   const router = useRouter();
+  const user = useSelector((state: RootState) => state.auth.user);
 
   const handleProfileClick = () => {
     router.push('/profile');
@@ -18,7 +21,11 @@ export const SidebarProfile: React.FC<{ closeSheet?: () => void }> = ({
       onClick={handleProfileClick}
     >
       <FontAwesomeIcon icon={faUser} />
-      <span>My Profile</span>
+      {user ? (
+        <span className='capitalize'>{user?.username} </span>
+      ) : (
+        <span>Profile</span>
+      )}
     </button>
   );
 };
