@@ -6,17 +6,17 @@ import {
   DropdownMenuTrigger,
 } from '@/core/inputs/dropdown-menu';
 import { cn } from '@/lib/utils';
-import { setRole } from '@/store/slices/role-slice';
+import { updateRole } from '@/store/slices/auth-slice';
 import type { RootState } from '@/store/store';
 import { faChevronDown, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const RolesDropdown: React.FC = () => {
-  const selectedRole = useSelector((state: RootState) => state.role.role);
   const dispatch = useDispatch();
+  const selectedRole = useSelector((state: RootState) => state.auth.role);
   const handleRoleChange = (roleId: number) => {
-    dispatch(setRole(roleId));
+    dispatch(updateRole(roleId));
   };
 
   return (

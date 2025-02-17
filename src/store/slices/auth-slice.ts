@@ -1,4 +1,5 @@
 import { StorageResolver } from '@/lib/storage';
+import { safeParse } from '@/utils/safe-parse';
 import { verifyToken } from '@/utils/verify-token';
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
@@ -7,20 +8,13 @@ interface IAuthState {
   user: {
     username: string;
   } | null;
+  role: number;
 }
 
 const initialState: IAuthState = {
   isAuthenticated: false,
   user: null,
-};
-
-const safeParse = (str: string | null) => {
-  if (!str) return null;
-  try {
-    return JSON.parse(str);
-  } catch {
-    return null;
-  }
+  role: 3,
 };
 
 export const authSlice = createSlice({
@@ -36,24 +30,34 @@ export const authSlice = createSlice({
       state.user = { username };
       StorageResolver.set('token', token);
       StorageResolver.set('user', JSON.stringify({ username }));
+      StorageResolver.set('role', JSON.stringify(initialState.role));
     },
     logout: (state) => {
       state.isAuthenticated = false;
       state.user = null;
       StorageResolver.remove('token');
       StorageResolver.remove('user');
+      StorageResolver.remove('role');
     },
     checkAuth: (state) => {
       const token = StorageResolver.get('token');
       const user = StorageResolver.get('user');
+      const role = StorageResolver.get('role');
       const parsedUser = safeParse(user);
+      const parsedRole = role ? Number(role) : null;
       state.isAuthenticated =
-        token && parsedUser ? verifyToken(token, parsedUser.username) : false;
+        token && parsedUser && parsedRole
+          ? verifyToken(token, parsedUser.username) && parsedRole === state.role
+          : false;
       state.user = state.isAuthenticated ? parsedUser : null;
+    },
+    updateRole: (state, action: PayloadAction<number>) => {
+      StorageResolver.set('role', JSON.stringify(action.payload));
+      state.role = action.payload;
     },
   },
 });
 
-export const { login, logout, checkAuth } = authSlice.actions;
+export const { login, logout, checkAuth, updateRole } = authSlice.actions;
 
 export default authSlice.reducer;

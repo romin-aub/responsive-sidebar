@@ -34,7 +34,12 @@ const LoginPage = () => {
   }, [dispatch, isAuthenticated, router]);
 
   const onSubmit = (data: ILoginProps) => {
-    dispatch(login({ username: data.username, token: btoa(data.username) }));
+    dispatch(
+      login({
+        username: data.username,
+        token: btoa(data.username),
+      }),
+    );
     router.push('/');
   };
 
