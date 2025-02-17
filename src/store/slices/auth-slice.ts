@@ -47,7 +47,7 @@ export const authSlice = createSlice({
       const parsedRole = role ? Number(role) : null;
       state.isAuthenticated =
         token && parsedUser && parsedRole
-          ? verifyToken(token, parsedUser.username)
+          ? verifyToken(token, parsedUser.username) && parsedRole === state.role
           : false;
       state.user = state.isAuthenticated ? parsedUser : null;
     },
