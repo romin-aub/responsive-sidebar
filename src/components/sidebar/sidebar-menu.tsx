@@ -14,7 +14,7 @@ export const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({
   const pathname = usePathname();
   const router = useRouter();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const roleId = useSelector((state: RootState) => state.role.role);
+  const roleId = useSelector((state: RootState) => state.auth.role);
 
   useEffect(() => {
     setActiveMenu(pathname);

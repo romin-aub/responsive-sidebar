@@ -23,7 +23,7 @@ export const MenuAccordion: React.FC<IMenuAccordionProps> = ({
   onClick,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const roleId = useSelector((state: RootState) => state.role.role);
+  const roleId = useSelector((state: RootState) => state.auth.role);
 
   useEffect(() => {
     setIsOpen(
