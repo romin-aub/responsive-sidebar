@@ -10,7 +10,7 @@
     "format": "biome format --write .",
     "lint": "biome lint --write .",
     "fix": "biome check --write .",
-    "prepare": "husky install",
+    "prepare": "husky",
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
