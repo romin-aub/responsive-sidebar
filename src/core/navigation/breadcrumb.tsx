@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import { ChevronRightIcon, DotsHorizontalIcon } from '@radix-ui/react-icons';
 import { Slot } from '@radix-ui/react-slot';
+import Link from 'next/link';
 import * as React from 'react';
 
 const Breadcrumb = React.forwardRef<
@@ -42,12 +43,14 @@ const BreadcrumbLink = React.forwardRef<
   HTMLAnchorElement,
   React.ComponentPropsWithoutRef<'a'> & {
     asChild?: boolean;
+    href?: string;
   }
->(({ asChild, className, ...props }, ref) => {
-  const Comp = asChild ? Slot : 'a';
+>(({ asChild, href, className, ...props }, ref) => {
+  const Comp = asChild ? Slot : Link;
 
   return (
     <Comp
+      href={href ?? '#'}
       ref={ref}
       className={cn('transition-colors hover:text-foreground', className)}
       {...props}
