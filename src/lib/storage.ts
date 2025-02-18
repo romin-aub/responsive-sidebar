@@ -22,7 +22,7 @@ class Storage {
     if (type === 'cookie') {
       return {
         set: (key: string, value: string) => {
-          document.cookie = `${key}=${value}; path=/;`;
+          document.cookie = `${key}=${value}; path=/; HTTPOnly; Secure; SameSite=strict`;
         },
         get: (key: string) => {
           const cookies = document.cookie.split(';');
