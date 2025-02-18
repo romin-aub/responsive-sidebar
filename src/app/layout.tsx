@@ -7,6 +7,18 @@ config.autoAddCss = false;
 
 export const metadata: Metadata = {
   title: 'Awwwards',
+  description: 'Responsive Layout with role based authentication in Next.js',
+  manifest: '/manifest.json',
+  icons: [
+    {
+      rel: 'icon',
+      url: '/icons/logo-192.png',
+    },
+    {
+      rel: 'apple-touch-icon',
+      url: '/icons/icon-512.png',
+    },
+  ],
 };
 
 const RootLayout: React.FC<
