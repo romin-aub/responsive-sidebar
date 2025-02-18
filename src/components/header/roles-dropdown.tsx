@@ -20,13 +20,13 @@ export const RolesDropdown: React.FC = () => {
   };
 
   return (
-    <div className='flex flex-row-reverse gap-3 items-center text-sm'>
-      <FontAwesomeIcon icon={faUser} size='lg' />
-      <DropdownMenu>
-        <DropdownMenuTrigger className='flex flex-row-reverse gap-3 items-center outline-none'>
+    <DropdownMenu>
+      <DropdownMenuTrigger className='flex flex-row-reverse gap-3 items-center text-sm'>
+        <div className='flex flex-row-reverse gap-3 items-center outline-none'>
           <FontAwesomeIcon icon={faChevronDown} size='xs' />
           {Roles.find((role) => role.id === selectedRole)?.name}
-        </DropdownMenuTrigger>
+        </div>
+        <FontAwesomeIcon icon={faUser} size='lg' />
         <DropdownMenuContent className='m-2'>
           {Roles.map((role) => (
             <DropdownMenuItem
@@ -40,7 +40,7 @@ export const RolesDropdown: React.FC = () => {
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>
-      </DropdownMenu>
-    </div>
+      </DropdownMenuTrigger>
+    </DropdownMenu>
   );
 };
