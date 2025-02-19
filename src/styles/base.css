@@ -12,11 +12,13 @@
 [data-theme="dark"] {
   body {
     --text: #ffffff;
+    color: var(--text);
   }
 }
 
 [data-theme="light"] {
   body {
     --text: #000000;
+    color: var(--text);
   }
 }

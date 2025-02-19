@@ -56,7 +56,7 @@ export const MenuAccordion: React.FC<IMenuAccordionProps> = ({
       >
         <AccordionItem key={label} value={label}>
           <AccordionTrigger>
-            <div className='flex justify-start items-center rounded-sm h-14 cursor-pointer hover:bg-gray-100'>
+            <div className='flex justify-start items-center rounded-sm h-14 cursor-pointer'>
               <div className='h-full w-14 flex items-center justify-center'>
                 <FontAwesomeIcon icon={icon} size='xl' />
               </div>

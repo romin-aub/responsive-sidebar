@@ -16,7 +16,7 @@ export const Header: React.FC = () => {
       </div>
       <div className='flex items-center gap-3 ml-3'>
         <ThemeSwitcher />
-        <hr className='w-px h-6 bg-gray-300' />
+        <hr className='w-px h-6 bg-white opacity-50' />
         <RolesDropdown />
       </div>
     </div>

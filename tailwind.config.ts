@@ -1,4 +1,3 @@
-import { colors } from '@/theme/colors';
 import type { Config } from 'tailwindcss';
 
 export default {
@@ -23,7 +22,6 @@ export default {
       selector: '.debug-screens',
     },
     extend: {
-      colors: colors,
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
