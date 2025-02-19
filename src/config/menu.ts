@@ -1,3 +1,4 @@
+import type { IMenuList } from '@/types/menu-type';
 import {
   faAward,
   faBoltLightning,
@@ -20,7 +21,6 @@ import {
   faStarOfLife,
   faVestPatches,
 } from '@fortawesome/free-solid-svg-icons';
-import type { IMenuList } from '../types/menu-type';
 
 export const MenuList: IMenuList[] = [
   {

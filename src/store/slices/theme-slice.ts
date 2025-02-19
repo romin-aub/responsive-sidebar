@@ -1,4 +1,4 @@
-import { DefaultTheme } from '@/config/themes';
+import { defaultTheme } from '@/config/themes';
 import { type PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface IThemeState {
@@ -6,7 +6,7 @@ interface IThemeState {
 }
 
 const initialState: IThemeState = {
-  theme: DefaultTheme,
+  theme: defaultTheme,
 };
 
 export const themeSlice = createSlice({

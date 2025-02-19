@@ -1,6 +1,6 @@
-export const Themes = {
+export const themes = {
   light: 'light',
   dark: 'dark',
 };
 
-export const DefaultTheme = Themes.dark;
+export const defaultTheme = themes.dark;

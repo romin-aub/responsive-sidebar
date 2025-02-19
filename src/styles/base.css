@@ -1,0 +1,22 @@
+@tailwind base;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+[data-theme="dark"] {
+  body {
+    --text: #ffffff;
+  }
+}
+
+[data-theme="light"] {
+  body {
+    --text: #000000;
+  }
+}
