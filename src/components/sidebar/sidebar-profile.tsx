@@ -17,7 +17,6 @@ export const SidebarProfile: React.FC<{ closeSheet?: () => void }> = ({
   };
   return (
     <Button
-      type='button'
       className='p-2 flex items-center w-full justify-center gap-4 border-2 border-[var(--secondary-30)] cursor-pointer'
       onClick={handleProfileClick}
     >
