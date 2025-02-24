@@ -63,10 +63,10 @@ const LoginPage = () => {
             id='username'
             {...register('username', {
               setValueAs: (value) => value.trim(),
-              required: 'Username is required',
+              required: t('login.error.required'),
               minLength: {
                 value: 3,
-                message: 'Username must be at least 3 characters long',
+                message: t('login.error.minLength'),
               },
             })}
             className='h-10 border border-[var(--secondary-50)] hover:border-[var(--secondary-10)]'

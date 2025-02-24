@@ -1,12 +1,91 @@
 {
+  "common": {
+    "loading": "Loading..."
+  },
   "login": {
     "title": "Login",
     "username": "Username",
-    "button": "Login"
+    "button": "Login",
+    "error": {
+      "required": "Username is required",
+      "minLength": "Username must be at least 3 characters long"
+    }
   },
   "notFound": {
     "title": "404",
-    "description": "La página que estás buscando no existe.",
-    "button": "Volver a la página de inicio"
+    "description": "The page you are looking for does not exist.",
+    "button": "Go back to the home page"
+  },
+  "about": {
+    "description": "About Us"
+  },
+  "awards": {
+    "dayHighlights": {
+      "creative": {
+        "description": "Most Creative Day-Highlights"
+      },
+      "innovative": {
+        "description": "Most Innovative Day-Highlights"
+      },
+      "popular": {
+        "description": "Most Popular Day-Highlights"
+      }
+    },
+    "monthHighlights": {
+      "creative": {
+        "description": "Most Creative Month-Highlights"
+      },
+      "innovative": {
+        "description": "Most Innovative Month-Highlights"
+      },
+      "popular": {
+        "description": "Most Popular Month-Highlights"
+      }
+    },
+    "yearHighlights": {
+      "creative": {
+        "description": "Most Creative Year-Highlights"
+      },
+      "innovative": {
+        "description": "Most Innovative Year-Highlights"
+      },
+      "popular": {
+        "description": "Most Popular Year-Highlights"
+      }
+    },
+    "nominees": {
+      "mostRated": {
+        "description": "Most Rated Nominees"
+      },
+      "competitive": {
+        "description": "Competitive Nominees"
+      }
+    }
+  },
+  "categories": {
+    "e-commerce": {
+      "description": "Ecommerce"
+    },
+    "fashion": {
+      "description": "Fashion"
+    },
+    "gaming": {
+      "description": "Gaming"
+    }
+  },
+  "contact-us": {
+    "description": "Contact Us"
+  },
+  "my-rank": {
+    "description": "My Rank"
+  },
+  "participate": {
+    "description": "Participate"
+  },
+  "profile": {
+    "description": "Profile"
+  },
+  "submissions": {
+    "description": "Total Submissions"
   }
 }

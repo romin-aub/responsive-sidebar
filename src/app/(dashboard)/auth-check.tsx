@@ -5,6 +5,7 @@ import type { RootState } from '@/store/store';
 import { useRouter } from 'next/navigation';
 import type React from 'react';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
 export const AuthCheck = <P extends object>(
@@ -16,6 +17,7 @@ export const AuthCheck = <P extends object>(
     const isAuthenticated = useSelector(
       (state: RootState) => state.auth.isAuthenticated,
     );
+    const { t } = useTranslation();
 
     useEffect(() => {
       dispatch(checkAuth());
@@ -26,7 +28,7 @@ export const AuthCheck = <P extends object>(
     }, [isAuthenticated, dispatch, router]);
 
     if (!isAuthenticated) {
-      return <div>Loading...</div>;
+      return <div>{t('common.loading')}</div>;
     }
     return <WrappedComponent {...props} />;
   };

@@ -1,12 +1,91 @@
 {
+  "common": {
+    "loading": "Cargando..."
+  },
   "login": {
-    "title": "Login",
-    "username": "Username",
-    "button": "Login"
+    "title": "Iniciar sesión",
+    "username": "Nombre de usuario",
+    "button": "Iniciar sesión",
+    "error": {
+      "required": "Nombre de usuario es requerido",
+      "minLength": "Nombre de usuario debe tener al menos 3 caracteres"
+    }
   },
   "notFound": {
     "title": "404",
     "description": "La página que estás buscando no existe.",
     "button": "Volver a la página de inicio"
+  },
+  "about": {
+    "description": "Sobre Nosotros"
+  },
+  "awards": {
+    "dayHighlights": {
+      "creative": {
+        "description": "Lo más destacado del día más creativo"
+      },
+      "innovative": {
+        "description": "Lo más destacado del día más innovador"
+      },
+      "popular": {
+        "description": "Lo más destacado del día más popular"
+      }
+    },
+    "monthHighlights": {
+      "creative": {
+        "description": "Lo más destacado del mes más creativo"
+      },
+      "innovative": {
+        "description": "Lo más destacado del mes más innovador"
+      },
+      "popular": {
+        "description": "Lo más destacado del mes más popular"
+      }
+    },
+    "yearHighlights": {
+      "creative": {
+        "description": "Lo más destacado del año más creativo"
+      },
+      "innovative": {
+        "description": "Lo más destacado del año más innovador"
+      },
+      "popular": {
+        "description": "Lo más destacado del año más popular"
+      }
+    },
+    "nominees": {
+      "mostRated": {
+        "description": "Los nominados con más votos"
+      },
+      "competitive": {
+        "description": "Los nominados más competitivos"
+      }
+    }
+  },
+  "categories": {
+    "e-commerce": {
+      "description": "Comercio electrónico"
+    },
+    "fashion": {
+      "description": "Moda"
+    },
+    "gaming": {
+      "description": "Juegos"
+    }
+  },
+  "contact-us": {
+    "description": "Contactanos"
+  },
+  "my-rank": {
+    "description": "Mi Rango"
+  },
+  "participate": {
+    "description": "Participa"
+  },
+  "profile": {
+    "description": "Perfil"
+  },
+  "submissions": {
+    "description": "Total de envíos"
   }
 }
