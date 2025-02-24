@@ -17,75 +17,105 @@
     "button": "Volver a la página de inicio"
   },
   "about": {
+    "title": "Sobre Nosotros",
     "description": "Sobre Nosotros"
   },
   "awards": {
+    "title": "Premios",
     "dayHighlights": {
+      "title": "Resaltes del día",
       "creative": {
+        "title": "Creativo",
         "description": "Lo más destacado del día más creativo"
       },
       "innovative": {
+        "title": "Innovador",
         "description": "Lo más destacado del día más innovador"
       },
       "popular": {
+        "title": "Popular",
         "description": "Lo más destacado del día más popular"
       }
     },
     "monthHighlights": {
+      "title": "Resaltes del mes",
       "creative": {
+        "title": "Creativo",
         "description": "Lo más destacado del mes más creativo"
       },
       "innovative": {
+        "title": "Innovador",
         "description": "Lo más destacado del mes más innovador"
       },
       "popular": {
+        "title": "Popular",
         "description": "Lo más destacado del mes más popular"
       }
     },
     "yearHighlights": {
+      "title": "Resaltes del año",
       "creative": {
+        "title": "Creativo",
         "description": "Lo más destacado del año más creativo"
       },
       "innovative": {
+        "title": "Innovador",
         "description": "Lo más destacado del año más innovador"
       },
       "popular": {
+        "title": "Popular",
         "description": "Lo más destacado del año más popular"
       }
     },
     "nominees": {
+      "title": "Nominados",
       "mostRated": {
+        "title": "Más votados",
         "description": "Los nominados con más votos"
       },
       "competitive": {
+        "title": "Más competitivos",
         "description": "Los nominados más competitivos"
       }
     }
   },
   "categories": {
+    "title": "Categorías",
     "e-commerce": {
+      "title": "Comercio electrónico",
       "description": "Comercio electrónico"
     },
     "fashion": {
+      "title": "Moda",
       "description": "Moda"
     },
     "gaming": {
+      "title": "Juegos",
       "description": "Juegos"
     }
   },
   "contact-us": {
+    "title": "Contactanos",
     "description": "Contactanos"
   },
   "my-rank": {
+    "title": "Mi Rango",
     "description": "Mi Rango"
   },
   "participate": {
+    "title": "Participa",
     "description": "Participa"
   },
   "profile": {
+    "title": "Perfil",
     "description": "Perfil"
   },
   "submissions": {
+    "title": "Envíos",
     "description": "Total de envíos"
+  },
+  "explore": {
+    "title": "Explorar",
+    "description": "Explorar"
   }
 }

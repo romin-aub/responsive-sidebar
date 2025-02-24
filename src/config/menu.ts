@@ -21,36 +21,37 @@ import {
   faStarOfLife,
   faVestPatches,
 } from '@fortawesome/free-solid-svg-icons';
+import { t } from 'i18next';
 
 export const MenuList: IMenuList[] = [
   {
-    label: 'Explore',
+    label: t('explore.title'),
     icon: faHome,
     href: '/',
     enabled: true,
     roles: [1, 2, 3],
   },
   {
-    label: 'Awards',
+    label: t('awards.title'),
     icon: faAward,
     enabled: true,
     roles: [1, 2, 3],
     items: [
       {
-        label: 'Nominees',
+        label: t('awards.nominees.title'),
         icon: faPeopleGroup,
         enabled: true,
         roles: [1, 2],
         items: [
           {
-            label: 'Most Rated',
+            label: t('awards.nominees.mostRated.title'),
             icon: faStar,
             href: '/awards/nominees/most-rated',
             enabled: true,
             roles: [1, 2],
           },
           {
-            label: 'Competitive',
+            label: t('awards.nominees.competitive.title'),
             icon: faStarOfLife,
             href: '/awards/nominees/competitive',
             enabled: true,
@@ -59,27 +60,27 @@ export const MenuList: IMenuList[] = [
         ],
       },
       {
-        label: 'Day Highlights',
+        label: t('awards.dayHighlights.title'),
         icon: faCalendarDay,
         enabled: true,
         roles: [1, 2, 3],
         items: [
           {
-            label: 'Most Popular',
+            label: t('awards.dayHighlights.popular.title'),
             icon: faBoltLightning,
             href: '/awards/day-highlights/popular',
             enabled: true,
             roles: [1, 2],
           },
           {
-            label: 'Most Creative',
+            label: t('awards.dayHighlights.creative.title'),
             icon: faLightbulb,
             href: '/awards/day-highlights/creative',
             enabled: true,
             roles: [1, 2, 3],
           },
           {
-            label: 'Most Innovative',
+            label: t('awards.dayHighlights.innovative.title'),
             icon: faMagicWandSparkles,
             href: '/awards/day-highlights/innovative',
             enabled: true,
@@ -88,27 +89,27 @@ export const MenuList: IMenuList[] = [
         ],
       },
       {
-        label: 'Month Highlights',
+        label: t('awards.monthHighlights.title'),
         icon: faCalendarWeek,
         enabled: true,
         roles: [1, 2, 3],
         items: [
           {
-            label: 'Most Popular',
+            label: t('awards.monthHighlights.popular.title'),
             icon: faBoltLightning,
             href: '/awards/month-highlights/popular',
             enabled: true,
             roles: [1, 2],
           },
           {
-            label: 'Most Creative',
+            label: t('awards.monthHighlights.creative.title'),
             icon: faLightbulb,
             href: '/awards/month-highlights/creative',
             enabled: true,
             roles: [1, 2, 3],
           },
           {
-            label: 'Most Innovative',
+            label: t('awards.monthHighlights.innovative.title'),
             icon: faMagicWandSparkles,
             href: '/awards/month-highlights/innovative',
             enabled: true,
@@ -117,27 +118,27 @@ export const MenuList: IMenuList[] = [
         ],
       },
       {
-        label: 'Year Highlights',
+        label: t('awards.yearHighlights.title'),
         icon: faCalendarAlt,
         enabled: true,
         roles: [1],
         items: [
           {
-            label: 'Most Popular',
+            label: t('awards.yearHighlights.popular.title'),
             icon: faBoltLightning,
             href: '/awards/year-highlights/popular',
             enabled: true,
             roles: [1],
           },
           {
-            label: 'Most Creative',
+            label: t('awards.yearHighlights.creative.title'),
             icon: faLightbulb,
             href: '/awards/year-highlights/creative',
             enabled: true,
             roles: [1],
           },
           {
-            label: 'Most Innovative',
+            label: t('awards.yearHighlights.innovative.title'),
             icon: faMagicWandSparkles,
             href: '/awards/year-highlights/innovative',
             enabled: true,
@@ -148,27 +149,27 @@ export const MenuList: IMenuList[] = [
     ],
   },
   {
-    label: 'Categories',
+    label: t('categories.title'),
     icon: faLayerGroup,
     enabled: true,
     roles: [1, 2, 3],
     items: [
       {
-        label: 'E-Commerce',
+        label: t('categories.e-commerce.title'),
         icon: faShop,
         href: '/categories/e-commerce',
         enabled: true,
         roles: [1, 2, 3],
       },
       {
-        label: 'Gaming',
+        label: t('categories.gaming.title'),
         icon: faPuzzlePiece,
         href: '/categories/gaming',
         enabled: true,
         roles: [1, 2],
       },
       {
-        label: 'Fashion',
+        label: t('categories.fashion.title'),
         icon: faVestPatches,
         href: '/categories/fashion',
         enabled: true,
@@ -177,35 +178,35 @@ export const MenuList: IMenuList[] = [
     ],
   },
   {
-    label: 'Participate',
+    label: t('participate.title'),
     icon: faPersonBooth,
     href: '/participate',
     enabled: true,
     roles: [1, 2, 3],
   },
   {
-    label: 'My Rank',
+    label: t('my-rank.title'),
     icon: faRankingStar,
     href: '/my-rank',
     enabled: true,
     roles: [1, 2, 3],
   },
   {
-    label: 'About',
+    label: t('about.title'),
     icon: faInbox,
     href: '/about',
     enabled: true,
     roles: [1, 2, 3],
   },
   {
-    label: 'Contact-Us',
+    label: t('contact-us.title'),
     icon: faContactBook,
     href: '/contact-us',
     enabled: true,
     roles: [1, 2, 3],
   },
   {
-    label: 'Total-Submissions',
+    label: t('submissions.title'),
     icon: faDatabase,
     href: '/submissions',
     enabled: true,

@@ -17,75 +17,105 @@
     "button": "Go back to the home page"
   },
   "about": {
+    "title": "About Us",
     "description": "About Us"
   },
   "awards": {
+    "title": "Awards",
     "dayHighlights": {
+      "title": "Day Highlights",
       "creative": {
+        "title": "Creative",
         "description": "Most Creative Day-Highlights"
       },
       "innovative": {
+        "title": "Innovative",
         "description": "Most Innovative Day-Highlights"
       },
       "popular": {
+        "title": "Popular",
         "description": "Most Popular Day-Highlights"
       }
     },
     "monthHighlights": {
+      "title": "Month Highlights",
       "creative": {
+        "title": "Creative",
         "description": "Most Creative Month-Highlights"
       },
       "innovative": {
+        "title": "Innovative",
         "description": "Most Innovative Month-Highlights"
       },
       "popular": {
+        "title": "Popular",
         "description": "Most Popular Month-Highlights"
       }
     },
     "yearHighlights": {
+      "title": "Year Highlights",
       "creative": {
+        "title": "Creative",
         "description": "Most Creative Year-Highlights"
       },
       "innovative": {
+        "title": "Innovative",
         "description": "Most Innovative Year-Highlights"
       },
       "popular": {
+        "title": "Popular",
         "description": "Most Popular Year-Highlights"
       }
     },
     "nominees": {
+      "title": "Nominees",
       "mostRated": {
+        "title": "Most Rated",
         "description": "Most Rated Nominees"
       },
       "competitive": {
+        "title": "Competitive",
         "description": "Competitive Nominees"
       }
     }
   },
   "categories": {
+    "title": "Categories",
     "e-commerce": {
+      "title": "Ecommerce",
       "description": "Ecommerce"
     },
     "fashion": {
+      "title": "Fashion",
       "description": "Fashion"
     },
     "gaming": {
+      "title": "Gaming",
       "description": "Gaming"
     }
   },
   "contact-us": {
+    "title": "Contact Us",
     "description": "Contact Us"
   },
   "my-rank": {
+    "title": "My Rank",
     "description": "My Rank"
   },
   "participate": {
+    "title": "Participate",
     "description": "Participate"
   },
   "profile": {
+    "title": "Profile",
     "description": "Profile"
   },
   "submissions": {
+    "title": "Submissions",
     "description": "Total Submissions"
+  },
+  "explore": {
+    "title": "Explore",
+    "description": "Explore"
   }
 }
