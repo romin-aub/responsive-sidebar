@@ -1,3 +1,4 @@
+import { Button } from '@/core/inputs/button';
 import type { RootState } from '@/store/store';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -15,9 +16,9 @@ export const SidebarProfile: React.FC<{ closeSheet?: () => void }> = ({
     closeSheet?.();
   };
   return (
-    <button
+    <Button
       type='button'
-      className='p-2 flex items-center w-full justify-center gap-4 border-2 cursor-pointer'
+      className='p-2 flex items-center w-full justify-center gap-4 border-2 border-[var(--secondary-30)] cursor-pointer'
       onClick={handleProfileClick}
     >
       <FontAwesomeIcon icon={faUser} />
@@ -26,6 +27,6 @@ export const SidebarProfile: React.FC<{ closeSheet?: () => void }> = ({
       ) : (
         <span>Profile</span>
       )}
-    </button>
+    </Button>
   );
 };

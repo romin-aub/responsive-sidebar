@@ -3,6 +3,7 @@
 import { Label } from '@/core/data-display/label';
 import { Button } from '@/core/inputs/button';
 import { Input } from '@/core/inputs/input';
+import { useTheme } from '@/store/hooks/useTheme';
 import { checkAuth, login } from '@/store/slices/auth-slice';
 import type { RootState } from '@/store/store';
 import { useRouter } from 'next/navigation';
@@ -15,6 +16,7 @@ interface ILoginProps {
 }
 
 const LoginPage = () => {
+  useTheme();
   const {
     register,
     handleSubmit,
@@ -47,10 +49,10 @@ const LoginPage = () => {
     return null;
   }
   return (
-    <div className='min-h-screen flex items-center justify-center bg-gray-100'>
+    <div className='min-h-screen text-black flex items-center justify-center bg-[var(--secondary-10)]'>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='bg-white p-6 rounded shadow-md w-3/5 md:w-2/5 lg:w-1/3 xl:w-1/4'
+        className='bg-[var(--primary-50)] p-6 rounded shadow-md w-3/5 md:w-2/5 lg:w-1/3 xl:w-1/4'
       >
         <h1 className='text-2xl font-bold mb-4'>Login</h1>
         <div className='mb-4'>
@@ -65,7 +67,7 @@ const LoginPage = () => {
                 message: 'Username must be at least 3 characters long',
               },
             })}
-            className='h-10'
+            className='h-10 border border-[var(--secondary-50)] hover:border-[var(--secondary-10)]'
           />
           {errors.username && (
             <p className='text-red-500 text-sm'>{errors.username.message}</p>
