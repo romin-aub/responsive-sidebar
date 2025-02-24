@@ -9,6 +9,7 @@ import type { RootState } from '@/store/store';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
+import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
 interface ILoginProps {
@@ -27,6 +28,7 @@ const LoginPage = () => {
   const isAuthenticated = useSelector(
     (state: RootState) => state.auth.isAuthenticated,
   );
+  const { t } = useTranslation();
 
   useEffect(() => {
     dispatch(checkAuth());
@@ -54,9 +56,9 @@ const LoginPage = () => {
         onSubmit={handleSubmit(onSubmit)}
         className='bg-[var(--primary-50)] p-6 rounded shadow-md w-3/5 md:w-2/5 lg:w-1/3 xl:w-1/4'
       >
-        <h1 className='text-2xl font-bold mb-4'>Login</h1>
+        <h1 className='text-2xl font-bold mb-4'>{t('login.title')}</h1>
         <div className='mb-4'>
-          <Label htmlFor='username'>Username</Label>
+          <Label htmlFor='username'>{t('login.username')}</Label>
           <Input
             id='username'
             {...register('username', {
@@ -74,7 +76,7 @@ const LoginPage = () => {
           )}
         </div>
         <Button type='submit' className='w-full'>
-          Login
+          {t('login.button')}
         </Button>
       </form>
     </div>

@@ -16,6 +16,7 @@
     "config": "@/config",
     "core": "@/core",
     "lib": "@/lib",
+    "locales": "@/locales",
     "store": "@/store",
     "styles": "@/styles",
     "theme": "@/theme",
