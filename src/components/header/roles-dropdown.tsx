@@ -21,27 +21,28 @@ export const RolesDropdown: React.FC = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className='flex flex-row-reverse gap-3 items-center text-sm'>
-        <div className='flex flex-row-reverse gap-3 items-center outline-none'>
-          <FontAwesomeIcon icon={faChevronDown} size='xs' />
+      <DropdownMenuTrigger className='flex text-sm gap-3 items-center outline-none'>
+        <FontAwesomeIcon icon={faUser} size='lg' />
+        <div className='text-nowrap'>
           {Roles.find((role) => role.id === selectedRole)?.name}
         </div>
-        <FontAwesomeIcon icon={faUser} size='lg' />
-        <DropdownMenuContent className='m-2'>
-          {Roles.map((role) => (
-            <DropdownMenuItem
-              key={role.id}
-              onClick={() => handleRoleChange(role.id)}
-              className={cn(
-                role.id === selectedRole &&
-                  'bg-[var(--secondary-10)] hover:bg-[var(--secondary-10)] text-[var(--primary-30)]',
-              )}
-            >
-              {role.name}
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuContent>
+        <FontAwesomeIcon icon={faChevronDown} size='xs' />
       </DropdownMenuTrigger>
+      <DropdownMenuContent className='m-2'>
+        {Roles.map((role) => (
+          <DropdownMenuItem
+            key={role.id}
+            onClick={() => handleRoleChange(role.id)}
+            className={cn(
+              role.id === selectedRole &&
+                'bg-[var(--secondary-10)] hover:bg-[var(--secondary-10)] text-[var(--primary-30)]',
+            )}
+          >
+            {role.name}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
     </DropdownMenu>
+    // </div>
   );
 };
