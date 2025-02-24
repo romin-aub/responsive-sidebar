@@ -12,12 +12,12 @@ export const useTheme = () => {
   const theme = useSelector((state: RootState) => state.theme.theme);
 
   useEffect(() => {
-    console.log('changes');
     // Set data-theme attribute on <html>
     document.documentElement.setAttribute('data-theme', theme);
     // Apply CSS variables dynamically
     const themeColors = colors[theme];
 
+    // Create CSS variables for each color of the theme
     if (themeColors) {
       for (const key of Object.keys(themeColors)) {
         const colorShades = themeColors[key as keyof typeof themeColors];
