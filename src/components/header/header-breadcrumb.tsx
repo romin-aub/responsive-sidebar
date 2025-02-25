@@ -16,29 +16,23 @@ export const HeaderBreadcrumb: React.FC = () => {
   const MenuList = getMenuList();
 
   const breadcrumbs = useMemo(() => {
+    const homeCrumb = { label: MenuList[0].label, href: '/' };
     if (pathname === '/') {
-      return [
-        {
-          label: MenuList[0].label,
-          href: pathname,
-        },
-      ];
+      return [homeCrumb];
     }
 
-    const pathBreadcrumbs = findBreadcrumbs(MenuList, pathname);
-    return [
-      { label: MenuList[0].label, href: '/' },
-      ...pathBreadcrumbs.map((item) => ({
-        label: item.label,
-        href: 'href' in item ? item.href : undefined,
-      })),
-    ];
-  }, [MenuList, pathname]);
+    const pathBreadcrumbs = findBreadcrumbs(MenuList, pathname).map((item) => ({
+      label: item.label,
+      href: 'href' in item ? item.href : undefined,
+    }));
+
+    return [homeCrumb, ...pathBreadcrumbs];
+  }, [pathname, MenuList]);
 
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        {breadcrumbs.map((crumb, index) => (
+        {breadcrumbs().map((crumb, index) => (
           <React.Fragment key={crumb.label}>
             <BreadcrumbItem>
               {index < breadcrumbs.length - 1 ? (
