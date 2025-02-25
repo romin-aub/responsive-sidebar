@@ -32,7 +32,7 @@ export const HeaderBreadcrumb: React.FC = () => {
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        {breadcrumbs().map((crumb, index) => (
+        {breadcrumbs.map((crumb, index) => (
           <React.Fragment key={crumb.label}>
             <BreadcrumbItem>
               {index < breadcrumbs.length - 1 ? (
