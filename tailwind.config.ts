@@ -22,6 +22,24 @@ export default {
       selector: '.debug-screens',
     },
     extend: {
+      colors: {
+        primary: {
+          DEFAULT: 'var(--primary)',
+          10: 'var(--primary-10)',
+          20: 'var(--primary-20)',
+          30: 'var(--primary-30)',
+          40: 'var(--primary-40)',
+          50: 'var(--primary-50)',
+        },
+        secondary: {
+          DEFAULT: 'var(--secondary)',
+          10: 'var(--secondary-10)',
+          20: 'var(--secondary-20)',
+          30: 'var(--secondary-30)',
+          40: 'var(--secondary-40)',
+          50: 'var(--secondary-50)',
+        },
+      },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',

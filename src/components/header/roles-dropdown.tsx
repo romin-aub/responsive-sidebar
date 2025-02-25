@@ -35,7 +35,7 @@ export const RolesDropdown: React.FC = () => {
             onClick={() => handleRoleChange(role.id)}
             className={cn(
               role.id === selectedRole &&
-                'bg-[var(--secondary-10)] hover:bg-[var(--secondary-10)] text-[var(--primary-30)]',
+                'bg-secondary-10 hover:bg-secondary-10 text-primary-30',
             )}
           >
             {role.name}

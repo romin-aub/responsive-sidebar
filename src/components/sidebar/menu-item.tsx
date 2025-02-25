@@ -23,9 +23,8 @@ export const MenuItem: React.FC<IMenuItemProps> = ({
       key={label}
       type='button'
       className={cn(
-        'flex justify-start items-center w-full rounded-sm h-14 cursor-pointer hover:bg-[var(--secondary-30)] hover:text-[var(--primary-30)]',
-        isActive &&
-          'bg-[var(--secondary-10)] hover:bg-[var(--secondary-10)] text-[var(--primary-30)]',
+        'flex justify-start items-center w-full rounded-sm h-14 cursor-pointer hover:bg-secondary-30 hover:text-primary-30',
+        isActive && 'bg-secondary-10 hover:bg-secondary-10 text-primary-30',
         isAccordionItem ? 'h-12' : 'h-14',
       )}
       onClick={() => onClick(href)}

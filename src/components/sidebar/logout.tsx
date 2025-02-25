@@ -16,7 +16,7 @@ export const Logout: React.FC = () => {
   return (
     <Button
       title='Logout'
-      className='border-2 border-[var(--secondary-30)] cursor-pointer h-9 w-9 flex items-center justify-center'
+      className='border-2 border-secondary-30 cursor-pointer h-9 w-9 flex items-center justify-center'
       onClick={handleLogoutClick}
     >
       <FontAwesomeIcon icon={faSignOut} />
