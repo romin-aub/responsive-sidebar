@@ -1,4 +1,4 @@
-import { MenuList } from '@/config/menu';
+import { getMenuList } from '@/config/menu';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,6 +13,7 @@ import React, { useMemo } from 'react';
 
 export const HeaderBreadcrumb: React.FC = () => {
   const pathname = usePathname();
+  const MenuList = getMenuList();
 
   const breadcrumbs = useMemo(() => {
     if (pathname === '/') {
@@ -32,7 +33,8 @@ export const HeaderBreadcrumb: React.FC = () => {
         href: 'href' in item ? item.href : undefined,
       })),
     ];
-  }, [pathname]);
+  }, [MenuList, pathname]);
+
   return (
     <Breadcrumb>
       <BreadcrumbList>

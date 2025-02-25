@@ -23,7 +23,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { t } from 'i18next';
 
-export const MenuList: IMenuList[] = [
+export const getMenuList = (): IMenuList[] => [
   {
     label: t('explore.title'),
     icon: faHome,

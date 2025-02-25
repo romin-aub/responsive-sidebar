@@ -1,6 +1,6 @@
 'use client';
 
-import { MenuList } from '@/config/menu';
+import { getMenuList } from '@/config/menu';
 import type { RootState } from '@/store/store';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -15,6 +15,7 @@ export const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({
   const router = useRouter();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const roleId = useSelector((state: RootState) => state.auth.role);
+  const MenuList = getMenuList();
 
   useEffect(() => {
     setActiveMenu(pathname);
