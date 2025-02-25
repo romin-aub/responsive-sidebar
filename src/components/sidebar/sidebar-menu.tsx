@@ -1,6 +1,6 @@
 'use client';
 
-import { MenuList } from '@/config/menu';
+import { getMenuList } from '@/config/menu';
 import type { RootState } from '@/store/store';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
@@ -28,24 +28,26 @@ export const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({
 
   return (
     <div>
-      {MenuList.filter((item) => item.roles.includes(roleId)).map((item) =>
-        'items' in item ? (
-          <MenuAccordion
-            key={item.label}
-            sidebarHeader={item}
-            activeMenu={activeMenu || ''}
-            onClick={handleItemClick}
-          />
-        ) : (
-          <MenuItem
-            key={item.label}
-            item={item}
-            isAccordionItem={false}
-            isActive={activeMenu === item.href}
-            onClick={handleItemClick}
-          />
-        ),
-      )}
+      {getMenuList()
+        .filter((item) => item.roles.includes(roleId))
+        .map((item) =>
+          'items' in item ? (
+            <MenuAccordion
+              key={item.label}
+              sidebarHeader={item}
+              activeMenu={activeMenu || ''}
+              onClick={handleItemClick}
+            />
+          ) : (
+            <MenuItem
+              key={item.label}
+              item={item}
+              isAccordionItem={false}
+              isActive={activeMenu === item.href}
+              onClick={handleItemClick}
+            />
+          ),
+        )}
     </div>
   );
 };

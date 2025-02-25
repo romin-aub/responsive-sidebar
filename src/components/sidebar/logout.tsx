@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
 
-export const Logout = () => {
+export const Logout: React.FC = () => {
   const dispatch = useDispatch();
   const router = useRouter();
 

@@ -43,6 +43,5 @@ export const RolesDropdown: React.FC = () => {
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
-    // </div>
   );
 };

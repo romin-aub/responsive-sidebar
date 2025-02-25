@@ -5,10 +5,12 @@ import { useTheme } from '@/store/hooks/useTheme';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useRouter } from 'next/navigation';
+import { useTranslation } from 'react-i18next';
 
 const NotFound: React.FC = () => {
   const router = useRouter();
   useTheme();
+  const { t } = useTranslation();
 
   const handleClick = () => {
     router.replace('/login');
@@ -17,13 +19,13 @@ const NotFound: React.FC = () => {
   return (
     <div className='min-h-screen flex flex-col items-center text-black justify-center bg-[var(--secondary-10)]'>
       <div className='bg-[var(--primary-50)] flex flex-col items-center p-6 rounded shadow-md w-3/5 md:w-2/5 lg:w-1/3 xl:w-1/4'>
-        <h1 className='text-2xl font-bold mb-4'>404</h1>
+        <h1 className='text-2xl font-bold mb-4'>{t('notFound.title')}</h1>
         <div className='mb-4'>
-          <p>The page you&apos;re looking for doesn&apos;t exist.</p>
+          <p>{t('notFound.description')}</p>
         </div>
         <Button onClick={handleClick} className='w-full'>
           <FontAwesomeIcon icon={faArrowLeft} className='w-5 h-5 mr-2' />
-          Go Back Home
+          {t('notFound.button')}
         </Button>
       </div>
     </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import { LanguageChanger } from './language-changer';
 import { Logout } from './logout';
 import { SidebarHeader } from './sidebar-header';
 import { SidebarMenu } from './sidebar-menu';
@@ -14,6 +15,7 @@ export const Sidebar: React.FC = () => {
       </div>
       <div className='flex gap-2'>
         <SidebarProfile />
+        <LanguageChanger />
         <Logout />
       </div>
     </div>

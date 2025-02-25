@@ -1,4 +1,4 @@
-import { MenuList } from '@/config/menu';
+import { getMenuList } from '@/config/menu';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,26 +13,22 @@ import React, { useMemo } from 'react';
 
 export const HeaderBreadcrumb: React.FC = () => {
   const pathname = usePathname();
+  const MenuList = getMenuList();
 
   const breadcrumbs = useMemo(() => {
+    const homeCrumb = { label: MenuList[0].label, href: '/' };
     if (pathname === '/') {
-      return [
-        {
-          label: MenuList[0].label,
-          href: pathname,
-        },
-      ];
+      return [homeCrumb];
     }
 
-    const pathBreadcrumbs = findBreadcrumbs(MenuList, pathname);
-    return [
-      { label: MenuList[0].label, href: '/' },
-      ...pathBreadcrumbs.map((item) => ({
-        label: item.label,
-        href: 'href' in item ? item.href : undefined,
-      })),
-    ];
-  }, [pathname]);
+    const pathBreadcrumbs = findBreadcrumbs(MenuList, pathname).map((item) => ({
+      label: item.label,
+      href: 'href' in item ? item.href : undefined,
+    }));
+
+    return [homeCrumb, ...pathBreadcrumbs];
+  }, [pathname, MenuList]);
+
   return (
     <Breadcrumb>
       <BreadcrumbList>
