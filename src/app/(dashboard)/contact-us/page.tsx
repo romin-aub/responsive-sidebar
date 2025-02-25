@@ -1,5 +1,10 @@
+'use client';
+
+import { useTranslation } from 'react-i18next';
+import { AuthCheck } from '../auth-check';
 const ContactUs: React.FC = () => {
-  return <div>Contact Us</div>;
+  const { t } = useTranslation();
+  return <div>{t('contact-us.description')}</div>;
 };
 
-export default ContactUs;
+export default AuthCheck(ContactUs);

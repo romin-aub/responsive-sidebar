@@ -13,9 +13,14 @@
   "aliases": {
     "components": "@/components",
     "ui": "@/components",
-    "utils": "@/utils",
+    "config": "@/config",
+    "core": "@/core",
     "lib": "@/lib",
+    "locales": "@/locales",
+    "store": "@/store",
     "styles": "@/styles",
-    "core": "@/core"
+    "theme": "@/theme",
+    "types": "@/types",
+    "utils": "@/utils"
   }
 }

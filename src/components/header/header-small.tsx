@@ -8,6 +8,8 @@ import {
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
+import { LanguageChanger } from '../sidebar/language-changer';
+import { Logout } from '../sidebar/logout';
 import { SidebarHeader } from '../sidebar/sidebar-header';
 import { SidebarMenu } from '../sidebar/sidebar-menu';
 import { SidebarProfile } from '../sidebar/sidebar-profile';
@@ -28,7 +30,11 @@ export const HeaderSmall: React.FC = () => {
           <SidebarMenu closeSheet={() => setIsSheetOpen(false)} />
         </div>
         <SheetFooter>
-          <SidebarProfile closeSheet={() => setIsSheetOpen(false)} />
+          <div className='flex gap-2'>
+            <SidebarProfile closeSheet={() => setIsSheetOpen(false)} />
+            <LanguageChanger closeSheet={() => setIsSheetOpen(false)} />
+            <Logout />
+          </div>
         </SheetFooter>
       </SheetContent>
     </Sheet>

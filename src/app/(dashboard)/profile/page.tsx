@@ -1,5 +1,10 @@
+'use client';
+
+import { useTranslation } from 'react-i18next';
+import { AuthCheck } from '../auth-check';
 const Profile: React.FC = () => {
-  return <div>My Profile</div>;
+  const { t } = useTranslation();
+  return <div>{t('profile.description')}</div>;
 };
 
-export default Profile;
+export default AuthCheck(Profile);

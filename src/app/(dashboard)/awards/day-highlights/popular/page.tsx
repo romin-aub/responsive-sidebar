@@ -1,5 +1,10 @@
+'use client';
+
+import { AuthCheck } from '@/app/(dashboard)/auth-check';
+import { useTranslation } from 'react-i18next';
 const MostPopularDayHighlights: React.FC = () => {
-  return <div>Most Popular Day-Highlights</div>;
+  const { t } = useTranslation();
+  return <div>{t('awards.dayHighlights.popular.description')}</div>;
 };
 
-export default MostPopularDayHighlights;
+export default AuthCheck(MostPopularDayHighlights);

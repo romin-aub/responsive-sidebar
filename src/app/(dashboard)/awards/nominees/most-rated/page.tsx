@@ -1,4 +1,9 @@
+'use client';
+
+import { AuthCheck } from '@/app/(dashboard)/auth-check';
+import { useTranslation } from 'react-i18next';
 const MostRatedNominees: React.FC = () => {
-  return <div>Most Rated Nominees</div>;
+  const { t } = useTranslation();
+  return <div>{t('awards.nominees.mostRated.description')}</div>;
 };
-export default MostRatedNominees;
+export default AuthCheck(MostRatedNominees);

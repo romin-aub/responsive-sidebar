@@ -4,9 +4,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/core/data-display/accordion';
+import type { RootState } from '@/store/store';
 import type { IMenuListHeader } from '@/types/menu-type';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { MenuItem } from './menu-item';
 
 export interface IMenuAccordionProps {
@@ -21,6 +23,7 @@ export const MenuAccordion: React.FC<IMenuAccordionProps> = ({
   onClick,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const roleId = useSelector((state: RootState) => state.auth.role);
 
   useEffect(() => {
     setIsOpen(
@@ -53,7 +56,7 @@ export const MenuAccordion: React.FC<IMenuAccordionProps> = ({
       >
         <AccordionItem key={label} value={label}>
           <AccordionTrigger>
-            <div className='flex justify-start items-center rounded-sm h-14 cursor-pointer hover:bg-gray-100'>
+            <div className='flex justify-start items-center rounded-sm h-14 cursor-pointer'>
               <div className='h-full w-14 flex items-center justify-center'>
                 <FontAwesomeIcon icon={icon} size='xl' />
               </div>
@@ -61,24 +64,26 @@ export const MenuAccordion: React.FC<IMenuAccordionProps> = ({
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            {items.map((subItem) =>
-              'items' in subItem ? (
-                <MenuAccordion
-                  key={subItem.label}
-                  sidebarHeader={subItem}
-                  activeMenu={activeMenu}
-                  onClick={onClick}
-                />
-              ) : (
-                <MenuItem
-                  key={subItem.label}
-                  item={subItem}
-                  isAccordionItem
-                  isActive={activeMenu === subItem.href}
-                  onClick={onClick}
-                />
-              ),
-            )}
+            {items
+              .filter((item) => item.roles.includes(roleId))
+              .map((subItem) =>
+                'items' in subItem ? (
+                  <MenuAccordion
+                    key={subItem.label}
+                    sidebarHeader={subItem}
+                    activeMenu={activeMenu}
+                    onClick={onClick}
+                  />
+                ) : (
+                  <MenuItem
+                    key={subItem.label}
+                    item={subItem}
+                    isAccordionItem
+                    isActive={activeMenu === subItem.href}
+                    onClick={onClick}
+                  />
+                ),
+              )}
           </AccordionContent>
         </AccordionItem>
       </Accordion>
