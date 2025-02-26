@@ -21,9 +21,9 @@ export const MenuItem: React.FC<IMenuItemProps> = ({
 
   if (!enabled) return null;
   return (
-    <button
+    <div
+      typeof='button'
       key={label}
-      type='button'
       className={cn(
         'flex justify-start items-center w-full rounded-sm h-14 cursor-pointer hover:bg-secondary-30 hover:text-primary-30',
         isActive && 'bg-secondary-10 hover:bg-secondary-10 text-primary-30',
@@ -40,6 +40,6 @@ export const MenuItem: React.FC<IMenuItemProps> = ({
         <FontAwesomeIcon icon={icon} size='lg' />
       </div>
       <span className='text-base'>{t(label)}</span>
-    </button>
+    </div>
   );
 };
