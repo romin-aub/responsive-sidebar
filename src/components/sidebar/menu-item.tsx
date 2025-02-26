@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import type { IMenuListItem } from '@/types/menu-type';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslation } from 'react-i18next';
 
 export interface IMenuItemProps {
   item: IMenuListItem;
@@ -15,17 +16,17 @@ export const MenuItem: React.FC<IMenuItemProps> = ({
   isActive,
   onClick,
 }) => {
+  const { t } = useTranslation();
   const { label, icon, href, enabled } = item;
 
   if (!enabled) return null;
   return (
-    <button
+    <div
+      typeof='button'
       key={label}
-      type='button'
       className={cn(
-        'flex justify-start items-center w-full rounded-sm h-14 cursor-pointer hover:bg-[var(--secondary-30)] hover:text-[var(--primary-30)]',
-        isActive &&
-          'bg-[var(--secondary-10)] hover:bg-[var(--secondary-10)] text-[var(--primary-30)]',
+        'flex justify-start items-center w-full rounded-sm h-14 cursor-pointer hover:bg-secondary-30 hover:text-primary-30',
+        isActive && 'bg-secondary-10 hover:bg-secondary-10 text-primary-30',
         isAccordionItem ? 'h-12' : 'h-14',
       )}
       onClick={() => onClick(href)}
@@ -38,7 +39,7 @@ export const MenuItem: React.FC<IMenuItemProps> = ({
       >
         <FontAwesomeIcon icon={icon} size='lg' />
       </div>
-      <span className='text-base'>{label}</span>
-    </button>
+      <span className='text-base'>{t(label)}</span>
+    </div>
   );
 };

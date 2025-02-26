@@ -51,10 +51,10 @@ const LoginPage = () => {
     return null;
   }
   return (
-    <div className='min-h-screen text-black flex items-center justify-center bg-[var(--secondary-10)]'>
+    <div className='min-h-screen text-black flex items-center justify-center bg-secondary-10'>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='bg-[var(--primary-50)] p-6 rounded shadow-md w-3/5 md:w-2/5 lg:w-1/3 xl:w-1/4'
+        className='bg-primary-50 p-6 rounded shadow-md w-3/5 md:w-2/5 lg:w-1/3 xl:w-1/4'
       >
         <h1 className='text-2xl font-bold mb-4'>{t('login.title')}</h1>
         <div className='mb-4'>
@@ -69,7 +69,7 @@ const LoginPage = () => {
                 message: t('login.error.minLength'),
               },
             })}
-            className='h-10 border border-[var(--secondary-50)] hover:border-[var(--secondary-10)]'
+            className='h-10 border border-secondary-50 hover:border-secondary-10'
           />
           {errors.username && (
             <p className='text-red-500 text-sm'>{errors.username.message}</p>

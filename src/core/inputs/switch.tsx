@@ -13,7 +13,7 @@ const Switch = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SwitchPrimitives.Root
     className={cn(
-      'peer inline-flex h-5 w-8 md:h-6 md:w-10 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-[var(--primary-10)] data-[state=unchecked]:bg-[var(--secondary-30)]',
+      'peer inline-flex h-5 w-8 md:h-6 md:w-10 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary-10 data-[state=unchecked]:bg-secondary-30',
       className,
     )}
     {...props}
@@ -21,7 +21,7 @@ const Switch = React.forwardRef<
   >
     <SwitchPrimitives.Thumb
       className={cn(
-        'pointer-events-none h-4 w-4 md:h-4 md:w-4 rounded-full flex justify-center ring-black items-center bg-[var(--primary-10)] shadow-lg ring-0 transition-transform md:data-[state=checked]:translate-x-5 data-[state=checked]:translate-x-3 data-[state=unchecked]:translate-x-0',
+        'pointer-events-none h-4 w-4 md:h-4 md:w-4 rounded-full flex justify-center ring-black items-center bg-primary-10 shadow-lg ring-0 transition-transform md:data-[state=checked]:translate-x-5 data-[state=checked]:translate-x-3 data-[state=unchecked]:translate-x-0',
       )}
     >
       <FontAwesomeIcon icon={faMoon} size='xs' />

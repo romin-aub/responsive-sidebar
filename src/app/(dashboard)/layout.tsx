@@ -12,11 +12,11 @@ export const DashboardLayout: React.FC<
   useTheme();
   return (
     <div className='flex h-screen w-screen'>
-      <div className='h-full lg:w-3/12 xl:w-3/12 2xl:w-2/12 w-0 p-0 overflow-hidden shadow-md lg:p-2 bg-[var(--secondary-20)]'>
+      <div className='h-full lg:w-3/12 xl:w-3/12 2xl:w-2/12 w-0 p-0 overflow-hidden shadow-md lg:p-2 bg-secondary-20'>
         <Sidebar />
       </div>
-      <div className='h-full lg:w-10/12 w-full bg-[var(--secondary-40)]'>
-        <div className='h-14 w-full shadow-md bg-[var(--secondary-20)]'>
+      <div className='h-full lg:w-10/12 w-full bg-secondary-40'>
+        <div className='h-14 w-full shadow-md bg-secondary-20'>
           <Header />
         </div>
         <main className='p-5'>{children}</main>
