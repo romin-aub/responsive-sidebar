@@ -8,6 +8,7 @@ import type { RootState } from '@/store/store';
 import type { IMenuListHeader } from '@/types/menu-type';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { MenuItem } from './menu-item';
 
@@ -23,6 +24,7 @@ export const MenuAccordion: React.FC<IMenuAccordionProps> = ({
   onClick,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t } = useTranslation();
   const roleId = useSelector((state: RootState) => state.auth.role);
 
   useEffect(() => {
@@ -60,7 +62,7 @@ export const MenuAccordion: React.FC<IMenuAccordionProps> = ({
               <div className='h-full w-14 flex items-center justify-center'>
                 <FontAwesomeIcon icon={icon} size='xl' />
               </div>
-              <span className='text-base'>{label}</span>
+              <span className='text-base'>{t(label)}</span>
             </div>
           </AccordionTrigger>
           <AccordionContent>

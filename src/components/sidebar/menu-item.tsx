@@ -1,6 +1,7 @@
 import { cn } from '@/lib/utils';
 import type { IMenuListItem } from '@/types/menu-type';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useTranslation } from 'react-i18next';
 
 export interface IMenuItemProps {
   item: IMenuListItem;
@@ -15,6 +16,7 @@ export const MenuItem: React.FC<IMenuItemProps> = ({
   isActive,
   onClick,
 }) => {
+  const { t } = useTranslation();
   const { label, icon, href, enabled } = item;
 
   if (!enabled) return null;
@@ -37,7 +39,7 @@ export const MenuItem: React.FC<IMenuItemProps> = ({
       >
         <FontAwesomeIcon icon={icon} size='lg' />
       </div>
-      <span className='text-base'>{label}</span>
+      <span className='text-base'>{t(label)}</span>
     </button>
   );
 };

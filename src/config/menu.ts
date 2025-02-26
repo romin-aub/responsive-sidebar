@@ -21,37 +21,36 @@ import {
   faStarOfLife,
   faVestPatches,
 } from '@fortawesome/free-solid-svg-icons';
-import { t } from 'i18next';
 
 export const getMenuList = (): IMenuList[] => [
   {
-    label: t('explore.title'),
+    label: 'explore.title',
     icon: faHome,
     href: '/',
     enabled: true,
     roles: [1, 2, 3],
   },
   {
-    label: t('awards.title'),
+    label: 'awards.title',
     icon: faAward,
     enabled: true,
     roles: [1, 2, 3],
     items: [
       {
-        label: t('awards.nominees.title'),
+        label: 'awards.nominees.title',
         icon: faPeopleGroup,
         enabled: true,
         roles: [1, 2],
         items: [
           {
-            label: t('awards.nominees.mostRated.title'),
+            label: 'awards.nominees.mostRated.title',
             icon: faStar,
             href: '/awards/nominees/most-rated',
             enabled: true,
             roles: [1, 2],
           },
           {
-            label: t('awards.nominees.competitive.title'),
+            label: 'awards.nominees.competitive.title',
             icon: faStarOfLife,
             href: '/awards/nominees/competitive',
             enabled: true,
@@ -60,27 +59,27 @@ export const getMenuList = (): IMenuList[] => [
         ],
       },
       {
-        label: t('awards.dayHighlights.title'),
+        label: 'awards.dayHighlights.title',
         icon: faCalendarDay,
         enabled: true,
         roles: [1, 2, 3],
         items: [
           {
-            label: t('awards.dayHighlights.popular.title'),
+            label: 'awards.dayHighlights.popular.title',
             icon: faBoltLightning,
             href: '/awards/day-highlights/popular',
             enabled: true,
             roles: [1, 2],
           },
           {
-            label: t('awards.dayHighlights.creative.title'),
+            label: 'awards.dayHighlights.creative.title',
             icon: faLightbulb,
             href: '/awards/day-highlights/creative',
             enabled: true,
             roles: [1, 2, 3],
           },
           {
-            label: t('awards.dayHighlights.innovative.title'),
+            label: 'awards.dayHighlights.innovative.title',
             icon: faMagicWandSparkles,
             href: '/awards/day-highlights/innovative',
             enabled: true,
@@ -89,27 +88,27 @@ export const getMenuList = (): IMenuList[] => [
         ],
       },
       {
-        label: t('awards.monthHighlights.title'),
+        label: 'awards.monthHighlights.title',
         icon: faCalendarWeek,
         enabled: true,
         roles: [1, 2, 3],
         items: [
           {
-            label: t('awards.monthHighlights.popular.title'),
+            label: 'awards.monthHighlights.popular.title',
             icon: faBoltLightning,
             href: '/awards/month-highlights/popular',
             enabled: true,
             roles: [1, 2],
           },
           {
-            label: t('awards.monthHighlights.creative.title'),
+            label: 'awards.monthHighlights.creative.title',
             icon: faLightbulb,
             href: '/awards/month-highlights/creative',
             enabled: true,
             roles: [1, 2, 3],
           },
           {
-            label: t('awards.monthHighlights.innovative.title'),
+            label: 'awards.monthHighlights.innovative.title',
             icon: faMagicWandSparkles,
             href: '/awards/month-highlights/innovative',
             enabled: true,
@@ -118,27 +117,27 @@ export const getMenuList = (): IMenuList[] => [
         ],
       },
       {
-        label: t('awards.yearHighlights.title'),
+        label: 'awards.yearHighlights.title',
         icon: faCalendarAlt,
         enabled: true,
         roles: [1],
         items: [
           {
-            label: t('awards.yearHighlights.popular.title'),
+            label: 'awards.yearHighlights.popular.title',
             icon: faBoltLightning,
             href: '/awards/year-highlights/popular',
             enabled: true,
             roles: [1],
           },
           {
-            label: t('awards.yearHighlights.creative.title'),
+            label: 'awards.yearHighlights.creative.title',
             icon: faLightbulb,
             href: '/awards/year-highlights/creative',
             enabled: true,
             roles: [1],
           },
           {
-            label: t('awards.yearHighlights.innovative.title'),
+            label: 'awards.yearHighlights.innovative.title',
             icon: faMagicWandSparkles,
             href: '/awards/year-highlights/innovative',
             enabled: true,
@@ -149,27 +148,27 @@ export const getMenuList = (): IMenuList[] => [
     ],
   },
   {
-    label: t('categories.title'),
+    label: 'categories.title',
     icon: faLayerGroup,
     enabled: true,
     roles: [1, 2, 3],
     items: [
       {
-        label: t('categories.e-commerce.title'),
+        label: 'categories.e-commerce.title',
         icon: faShop,
         href: '/categories/e-commerce',
         enabled: true,
         roles: [1, 2, 3],
       },
       {
-        label: t('categories.gaming.title'),
+        label: 'categories.gaming.title',
         icon: faPuzzlePiece,
         href: '/categories/gaming',
         enabled: true,
         roles: [1, 2],
       },
       {
-        label: t('categories.fashion.title'),
+        label: 'categories.fashion.title',
         icon: faVestPatches,
         href: '/categories/fashion',
         enabled: true,
@@ -178,35 +177,35 @@ export const getMenuList = (): IMenuList[] => [
     ],
   },
   {
-    label: t('participate.title'),
+    label: 'participate.title',
     icon: faPersonBooth,
     href: '/participate',
     enabled: true,
     roles: [1, 2, 3],
   },
   {
-    label: t('my-rank.title'),
+    label: 'my-rank.title',
     icon: faRankingStar,
     href: '/my-rank',
     enabled: true,
     roles: [1, 2, 3],
   },
   {
-    label: t('about.title'),
+    label: 'about.title',
     icon: faInbox,
     href: '/about',
     enabled: true,
     roles: [1, 2, 3],
   },
   {
-    label: t('contact-us.title'),
+    label: 'contact-us.title',
     icon: faContactBook,
     href: '/contact-us',
     enabled: true,
     roles: [1, 2, 3],
   },
   {
-    label: t('submissions.title'),
+    label: 'submissions.title',
     icon: faDatabase,
     href: '/submissions',
     enabled: true,

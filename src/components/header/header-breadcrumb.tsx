@@ -10,13 +10,14 @@ import {
 import { findBreadcrumbs } from '@/utils/find-breadcrumbs';
 import { usePathname } from 'next/navigation';
 import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const HeaderBreadcrumb: React.FC = () => {
   const pathname = usePathname();
   const MenuList = getMenuList();
-
+  const { t } = useTranslation();
   const breadcrumbs = useMemo(() => {
-    const homeCrumb = { label: MenuList[0].label, href: '/' };
+    const homeCrumb = { label: t(MenuList[0].label), href: '/' };
     if (pathname === '/') {
       return [homeCrumb];
     }
@@ -27,7 +28,7 @@ export const HeaderBreadcrumb: React.FC = () => {
     }));
 
     return [homeCrumb, ...pathBreadcrumbs];
-  }, [pathname, MenuList]);
+  }, [t, MenuList, pathname]);
 
   return (
     <Breadcrumb>
@@ -36,9 +37,11 @@ export const HeaderBreadcrumb: React.FC = () => {
           <React.Fragment key={crumb.label}>
             <BreadcrumbItem>
               {index < breadcrumbs.length - 1 ? (
-                <BreadcrumbLink href={crumb.href}>{crumb.label}</BreadcrumbLink>
+                <BreadcrumbLink href={crumb.href}>
+                  {t(crumb.label)}
+                </BreadcrumbLink>
               ) : (
-                <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
+                <BreadcrumbPage>{t(crumb.label)}</BreadcrumbPage>
               )}
             </BreadcrumbItem>
             {index < breadcrumbs.length - 1 && <BreadcrumbSeparator />}
