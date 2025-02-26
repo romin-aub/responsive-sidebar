@@ -1,9 +1,13 @@
 import type { IRole } from '@/types/role-type';
 
-export const Roles: IRole[] = [
-  { id: 1, name: 'Super Admin' },
-  { id: 2, name: 'Admin' },
-  { id: 3, name: 'User' },
-];
+export enum TRole {
+  SuperAdmin = 'Super Admin',
+  Admin = 'Admin',
+  User = 'User',
+}
 
-export type TRole = 'Super Admin' | 'Admin' | 'User';
+export const Roles: IRole[] = [
+  { id: 1, name: TRole.SuperAdmin },
+  { id: 2, name: TRole.Admin },
+  { id: 3, name: TRole.User },
+];
