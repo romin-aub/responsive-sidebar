@@ -22,9 +22,8 @@ export const LanguageChanger: React.FC<{ closeSheet?: () => void }> = ({
     <DropdownMenu>
       <DropdownMenuTrigger className='flex text-sm gap-3 items-center outline-none'>
         <div
-          typeof='button'
           title='Change Language'
-          className='border-2 border-secondary-30 cursor-pointer h-9 w-9 flex items-center justify-center bg-secondary-10 text-primary-10 shadow hover:bg-secondary-30'
+          className='border-2 rounded-sm border-secondary-30 cursor-pointer h-9 w-9 flex items-center justify-center bg-secondary-10 text-primary-10 shadow hover:bg-secondary-30'
         >
           <FontAwesomeIcon icon={faLanguage} />
         </div>
