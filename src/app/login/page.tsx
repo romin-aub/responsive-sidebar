@@ -4,8 +4,9 @@ import { Label } from '@/core/data-display/label';
 import { Button } from '@/core/inputs/button';
 import { Input } from '@/core/inputs/input';
 import { useTheme } from '@/store/hooks/useTheme';
-import { signIn } from 'next-auth/react';
+import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
@@ -22,6 +23,13 @@ const LoginPage = () => {
   } = useForm<ILoginProps>();
   const router = useRouter();
   const { t } = useTranslation();
+  const { status } = useSession();
+
+  useEffect(() => {
+    if (status === 'authenticated') {
+      router.push('/');
+    }
+  }, [status, router]);
 
   const onSubmit = async (data: ILoginProps) => {
     const res = await signIn('credentials', {

@@ -7,8 +7,8 @@ import { useRouter } from 'next/navigation';
 export const Logout: React.FC = () => {
   const router = useRouter();
 
-  const handleLogoutClick = () => {
-    signOut({ redirect: false });
+  const handleLogoutClick = async () => {
+    await signOut({ redirect: false });
     router.replace('/login');
   };
   return (
