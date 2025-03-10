@@ -4,13 +4,10 @@ import { Label } from '@/core/data-display/label';
 import { Button } from '@/core/inputs/button';
 import { Input } from '@/core/inputs/input';
 import { useTheme } from '@/store/hooks/useTheme';
-import { checkAuth, login } from '@/store/slices/auth-slice';
-import type { RootState } from '@/store/store';
+import { signIn } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
 
 interface ILoginProps {
   username: string;
@@ -23,33 +20,18 @@ const LoginPage = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<ILoginProps>();
-  const dispatch = useDispatch();
   const router = useRouter();
-  const isAuthenticated = useSelector(
-    (state: RootState) => state.auth.isAuthenticated,
-  );
   const { t } = useTranslation();
 
-  useEffect(() => {
-    dispatch(checkAuth());
-    if (isAuthenticated) {
+  const onSubmit = async (data: ILoginProps) => {
+    const res = await signIn('credentials', {
+      username: data.username,
+      redirect: false,
+    });
+    if (res?.ok) {
       router.push('/');
     }
-  }, [dispatch, isAuthenticated, router]);
-
-  const onSubmit = (data: ILoginProps) => {
-    dispatch(
-      login({
-        username: data.username,
-        token: btoa(data.username),
-      }),
-    );
-    router.push('/');
   };
-
-  if (isAuthenticated) {
-    return null;
-  }
   return (
     <div className='min-h-screen text-black flex items-center justify-center bg-secondary-10'>
       <form

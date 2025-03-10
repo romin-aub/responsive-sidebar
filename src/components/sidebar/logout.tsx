@@ -1,16 +1,14 @@
 import { Button } from '@/core/inputs/button';
-import { logout } from '@/store/slices/auth-slice';
 import { faSignOut } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { signOut } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import { useDispatch } from 'react-redux';
 
 export const Logout: React.FC = () => {
-  const dispatch = useDispatch();
   const router = useRouter();
 
   const handleLogoutClick = () => {
-    dispatch(logout());
+    signOut({ redirect: false });
     router.replace('/login');
   };
   return (

@@ -1,10 +1,9 @@
 'use client';
 
 import { getMenuList } from '@/config/menu';
-import type { RootState } from '@/store/store';
+import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 import { MenuAccordion } from './menu-accordion';
 import { MenuItem } from './menu-item';
 
@@ -14,7 +13,7 @@ export const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({
   const pathname = usePathname();
   const router = useRouter();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const roleId = useSelector((state: RootState) => state.auth.role);
+  const { data: session } = useSession();
 
   useEffect(() => {
     setActiveMenu(pathname);
@@ -29,7 +28,7 @@ export const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({
   return (
     <div>
       {getMenuList()
-        .filter((item) => item.roles.includes(roleId))
+        .filter((item) => item.roles.includes(session?.user?.role as number))
         .map((item) =>
           'items' in item ? (
             <MenuAccordion
