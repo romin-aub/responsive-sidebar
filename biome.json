@@ -14,7 +14,8 @@
       "public",
       ".next",
       "next-env.d.ts",
-      "*.mjs"
+      "*.mjs",
+      "*.env"
     ]
   },
   "formatter": {
