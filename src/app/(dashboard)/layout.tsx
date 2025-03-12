@@ -3,6 +3,7 @@
 import { Header } from '@/components/header/header';
 import { Sidebar } from '@/components/sidebar/sidebar';
 import { useTheme } from '@/store/hooks/useTheme';
+import { SignedIn } from '@clerk/nextjs';
 
 export const DashboardLayout: React.FC<
   Readonly<{
@@ -11,17 +12,19 @@ export const DashboardLayout: React.FC<
 > = ({ children }) => {
   useTheme();
   return (
-    <div className='flex h-screen w-screen'>
-      <div className='h-full lg:w-3/12 xl:w-3/12 2xl:w-2/12 w-0 p-0 overflow-hidden shadow-md lg:p-2 bg-secondary-20'>
-        <Sidebar />
-      </div>
-      <div className='h-full lg:w-10/12 w-full bg-secondary-40'>
-        <div className='h-14 w-full shadow-md bg-secondary-20'>
-          <Header />
+    <SignedIn>
+      <div className='flex h-screen w-screen'>
+        <div className='h-full lg:w-3/12 xl:w-3/12 2xl:w-2/12 w-0 p-0 overflow-hidden shadow-md lg:p-2 bg-secondary-20'>
+          <Sidebar />
         </div>
-        <main className='p-5'>{children}</main>
+        <div className='h-full lg:w-10/12 w-full bg-secondary-40'>
+          <div className='h-14 w-full shadow-md bg-secondary-20'>
+            <Header />
+          </div>
+          <main className='p-5'>{children}</main>
+        </div>
       </div>
-    </div>
+    </SignedIn>
   );
 };
 
