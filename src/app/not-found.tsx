@@ -13,7 +13,7 @@ const NotFound: React.FC = () => {
   const { t } = useTranslation();
 
   const handleClick = () => {
-    router.replace('/login');
+    router.replace('/');
   };
 
   return (
