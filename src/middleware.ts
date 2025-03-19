@@ -13,8 +13,7 @@ export default clerkMiddleware(async (auth, req) => {
   if (!authObject.userId || !authObject.sessionId) {
     return NextResponse.redirect(new URL('/login', req.url));
   }
-  const role =
-    (authObject.sessionClaims.metadata as { role: string }).role || '';
+  const role = (authObject.sessionClaims.metadata as { role: string }).role;
   if (!role || !getRoleId(role)) {
     return NextResponse.redirect(new URL('/login', req.url));
   }
