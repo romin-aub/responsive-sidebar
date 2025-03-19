@@ -4,14 +4,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/core/data-display/accordion';
-import type { RootState } from '@/store/store';
 import type { IMenuListHeader } from '@/types/menu-type';
+import { getRoleId } from '@/utils/get-role-id';
+import { useUser } from '@clerk/nextjs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { MenuItem } from './menu-item';
-
 export interface IMenuAccordionProps {
   sidebarHeader: IMenuListHeader;
   activeMenu: string;
@@ -25,7 +24,8 @@ export const MenuAccordion: React.FC<IMenuAccordionProps> = ({
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
-  const roleId = useSelector((state: RootState) => state.auth.role);
+  const { user } = useUser();
+  const roleId = getRoleId(user?.unsafeMetadata.role as string);
 
   useEffect(() => {
     setIsOpen(
@@ -67,7 +67,7 @@ export const MenuAccordion: React.FC<IMenuAccordionProps> = ({
           </AccordionTrigger>
           <AccordionContent>
             {items
-              .filter((item) => item.roles.includes(roleId))
+              .filter((item) => item.roles.includes(roleId as number))
               .map((subItem) =>
                 'items' in subItem ? (
                   <MenuAccordion

@@ -6,21 +6,28 @@ import {
   DropdownMenuTrigger,
 } from '@/core/inputs/dropdown-menu';
 import { cn } from '@/lib/utils';
-import { updateRole } from '@/store/slices/auth-slice';
-import type { RootState } from '@/store/store';
 import { routeHasAccess } from '@/utils/check-route-access';
+import { getRoleId } from '@/utils/get-role-id';
+import { useUser } from '@clerk/nextjs';
 import { faChevronDown, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { usePathname, useRouter } from 'next/navigation';
-import { useDispatch, useSelector } from 'react-redux';
 
 export const RolesDropdown: React.FC = () => {
-  const dispatch = useDispatch();
   const pathname = usePathname();
   const router = useRouter();
-  const selectedRole = useSelector((state: RootState) => state.auth.role);
-  const handleRoleChange = (roleId: number) => {
-    dispatch(updateRole(roleId));
+  const { user } = useUser();
+  const selectedRole = getRoleId(user?.unsafeMetadata.role as string);
+  const handleRoleChange = async (roleId: number) => {
+    const roleName = Roles.find((role) => role.id === roleId)?.name;
+    if (user) {
+      user.unsafeMetadata.role = roleName;
+      await user.update({
+        unsafeMetadata: {
+          role: roleName,
+        },
+      });
+    }
     if (!routeHasAccess(pathname, roleId)) {
       router.push('/');
     }

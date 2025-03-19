@@ -1,5 +1,6 @@
 'use client';
 
+import { TRole } from '@/config/roles';
 import { useTheme } from '@/store/hooks/useTheme';
 import { SignUp, SignedOut } from '@clerk/nextjs';
 
@@ -14,6 +15,9 @@ const SignUpPage = () => {
               card: 'bg-primary-50',
               footerActionLink: 'text-primary-10',
             },
+          }}
+          unsafeMetadata={{
+            role: TRole.User,
           }}
         />
       </div>
