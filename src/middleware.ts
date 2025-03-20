@@ -3,7 +3,11 @@ import { NextResponse } from 'next/server';
 import { routeHasAccess } from './utils/check-route-access';
 import { getRoleId } from './utils/get-role-id';
 
-const isPublicRoute = createRouteMatcher(['/login(.*)', '/sign-up(.*)']);
+const isPublicRoute = createRouteMatcher([
+  '/login(.*)',
+  '/sign-up(.*)',
+  '/not-found(.*)',
+]);
 
 export default clerkMiddleware(async (auth, req) => {
   if (isPublicRoute(req)) {
@@ -18,7 +22,7 @@ export default clerkMiddleware(async (auth, req) => {
     return NextResponse.redirect(new URL('/login', req.url));
   }
   if (!routeHasAccess(req.nextUrl.pathname, getRoleId(role) as number)) {
-    return NextResponse.redirect(new URL('/', req.url));
+    return NextResponse.redirect(new URL('/not-found', req.url));
   }
   return NextResponse.next();
 });
