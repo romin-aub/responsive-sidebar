@@ -28,6 +28,8 @@ const LoginPage = () => {
   useEffect(() => {
     if (status === 'authenticated') {
       router.push('/');
+    } else {
+      router.refresh();
     }
   }, [status, router]);
 
