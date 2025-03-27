@@ -17,12 +17,14 @@ const CookieStorageHandler: IStorageHandler = {
     document.cookie = `${key}=${value}; path=/; HTTPOnly; Secure; SameSite=strict`;
   },
   get: (key: string) => {
-    return (
-      document.cookie
-        .split('; ')
-        .find((row) => row.startsWith(`${key}=`))
-        ?.split('=')[1] || null
-    );
+    const cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      if (cookie.startsWith(`${key}=`)) {
+        return cookie.substring(key.length + 1);
+      }
+    }
+    return null;
   },
   remove: (key: string) => {
     document.cookie = `${key}=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
