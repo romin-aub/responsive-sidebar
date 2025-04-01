@@ -14,7 +14,7 @@ const LocalStorageHandler: IStorageHandler = {
 
 const CookieStorageHandler: IStorageHandler = {
   set: (key: string, value: string) => {
-    document.cookie = `${key}=${value}; path=/; HTTPOnly; Secure; SameSite=strict`;
+    document.cookie = `${key}=${value}; path=/; Secure; SameSite=strict`;
   },
   get: (key: string) => {
     const cookies = document.cookie.split(';');
