@@ -2,16 +2,16 @@ import { Button } from '@/core/inputs/button';
 import { logout } from '@/store/slices/auth-slice';
 import { faSignOut } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useRouter } from 'next/navigation';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export const Logout: React.FC = () => {
   const dispatch = useDispatch();
-  const router = useRouter();
+  const navigate = useNavigate();
 
   const handleLogoutClick = () => {
     dispatch(logout());
-    router.replace('/login');
+    navigate('/login');
   };
   return (
     <Button

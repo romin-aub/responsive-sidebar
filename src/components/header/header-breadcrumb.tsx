@@ -8,27 +8,29 @@ import {
   BreadcrumbSeparator,
 } from '@/core/navigation/breadcrumb';
 import { findBreadcrumbs } from '@/utils/find-breadcrumbs';
-import { usePathname } from 'next/navigation';
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router-dom';
 
 export const HeaderBreadcrumb: React.FC = () => {
-  const pathname = usePathname();
+  const location = useLocation();
   const MenuList = getMenuList();
   const { t } = useTranslation();
   const breadcrumbs = useMemo(() => {
     const homeCrumb = { label: t(MenuList[0].label), href: '/' };
-    if (pathname === '/') {
+    if (location.pathname === '/') {
       return [homeCrumb];
     }
 
-    const pathBreadcrumbs = findBreadcrumbs(MenuList, pathname).map((item) => ({
-      label: item.label,
-      href: 'href' in item ? item.href : undefined,
-    }));
+    const pathBreadcrumbs = findBreadcrumbs(MenuList, location.pathname).map(
+      (item) => ({
+        label: item.label,
+        href: 'href' in item ? item.href : undefined,
+      }),
+    );
 
     return [homeCrumb, ...pathBreadcrumbs];
-  }, [t, MenuList, pathname]);
+  }, [t, MenuList, location.pathname]);
 
   return (
     <Breadcrumb>

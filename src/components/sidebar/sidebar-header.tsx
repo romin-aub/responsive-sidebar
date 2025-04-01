@@ -1,9 +1,7 @@
-import Image from 'next/image';
-
 export const SidebarHeader: React.FC = () => {
   return (
     <div className='p-2 flex items-center justify-start gap-2 lg:gap-3'>
-      <Image
+      <img
         src={'/icons/logo-512.png'}
         alt='logo'
         width={50}

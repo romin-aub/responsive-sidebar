@@ -14,7 +14,8 @@
       "public",
       ".next",
       "next-env.d.ts",
-      "*.mjs"
+      "*.mjs",
+      "dev-dist"
     ]
   },
   "formatter": {
@@ -31,6 +32,9 @@
       "recommended": true,
       "a11y": {
         "useKeyWithClickEvents": "off"
+      },
+      "style": {
+        "noNonNullAssertion": "off"
       }
     }
   },

@@ -21,6 +21,7 @@
     "styles": "@/styles",
     "theme": "@/theme",
     "types": "@/types",
-    "utils": "@/utils"
+    "utils": "@/utils",
+    "app": "@/app"
   }
 }

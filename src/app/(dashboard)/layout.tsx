@@ -3,12 +3,9 @@
 import { Header } from '@/components/header/header';
 import { Sidebar } from '@/components/sidebar/sidebar';
 import { useTheme } from '@/store/hooks/useTheme';
+import { Outlet } from 'react-router-dom';
 
-export const DashboardLayout: React.FC<
-  Readonly<{
-    children: React.ReactNode;
-  }>
-> = ({ children }) => {
+export const DashboardLayout: React.FC = () => {
   useTheme();
   return (
     <div className='flex h-screen w-screen'>
@@ -19,7 +16,9 @@ export const DashboardLayout: React.FC<
         <div className='h-14 w-full shadow-md bg-secondary-20'>
           <Header />
         </div>
-        <main className='p-5'>{children}</main>
+        <main className='p-5'>
+          <Outlet />
+        </main>
       </div>
     </div>
   );

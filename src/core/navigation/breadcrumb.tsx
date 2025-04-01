@@ -1,8 +1,8 @@
 import { cn } from '@/lib/utils';
 import { ChevronRightIcon, DotsHorizontalIcon } from '@radix-ui/react-icons';
 import { Slot } from '@radix-ui/react-slot';
-import Link from 'next/link';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,
@@ -50,7 +50,7 @@ const BreadcrumbLink = React.forwardRef<
 
   return (
     <Comp
-      href={href ?? '#'}
+      to={href ?? '#'}
       ref={ref}
       className={cn('transition-colors hover:text-primary-30', className)}
       {...props}
