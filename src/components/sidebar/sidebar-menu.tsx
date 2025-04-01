@@ -2,17 +2,17 @@
 
 import { getMenuList } from '@/config/menu';
 import type { RootState } from '@/store/store';
+import { useRouter, useRouterState } from '@tanstack/react-router';
 import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom';
 import { MenuAccordion } from './menu-accordion';
 import { MenuItem } from './menu-item';
 
 export const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({
   closeSheet,
 }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const { location } = useRouterState();
+  const router = useRouter();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const roleId = useSelector((state: RootState) => state.auth.role);
 
@@ -22,7 +22,7 @@ export const SidebarMenu: React.FC<{ closeSheet?: () => void }> = ({
 
   const handleItemClick = (href: string) => {
     setActiveMenu(href);
-    navigate(href);
+    router.navigate({ to: href });
     closeSheet?.();
   };
 

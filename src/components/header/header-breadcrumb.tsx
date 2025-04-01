@@ -8,12 +8,12 @@ import {
   BreadcrumbSeparator,
 } from '@/core/navigation/breadcrumb';
 import { findBreadcrumbs } from '@/utils/find-breadcrumbs';
+import { useRouterState } from '@tanstack/react-router';
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
 
 export const HeaderBreadcrumb: React.FC = () => {
-  const location = useLocation();
+  const { location } = useRouterState();
   const MenuList = getMenuList();
   const { t } = useTranslation();
   const breadcrumbs = useMemo(() => {

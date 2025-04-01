@@ -3,7 +3,7 @@
 import { Header } from '@/components/header/header';
 import { Sidebar } from '@/components/sidebar/sidebar';
 import { useTheme } from '@/store/hooks/useTheme';
-import { Outlet } from 'react-router-dom';
+import { Outlet } from '@tanstack/react-router';
 
 export const DashboardLayout: React.FC = () => {
   useTheme();

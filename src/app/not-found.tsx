@@ -4,16 +4,16 @@ import { Button } from '@/core/inputs/button';
 import { useTheme } from '@/store/hooks/useTheme';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useRouter } from '@tanstack/react-router';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 
 const NotFound: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   useTheme();
   const { t } = useTranslation();
 
   const handleClick = () => {
-    navigate('/login');
+    router.navigate({ to: '/login' });
   };
 
   return (

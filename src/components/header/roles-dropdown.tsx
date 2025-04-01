@@ -11,18 +11,18 @@ import type { RootState } from '@/store/store';
 import { routeHasAccess } from '@/utils/check-route-access';
 import { faChevronDown, faUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useRouter, useRouterState } from '@tanstack/react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 export const RolesDropdown: React.FC = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const { location } = useRouterState();
   const selectedRole = useSelector((state: RootState) => state.auth.role);
   const handleRoleChange = (roleId: number) => {
     dispatch(updateRole(roleId));
     if (!routeHasAccess(location.pathname, roleId)) {
-      navigate('/');
+      router.navigate({ to: '/' });
     }
   };
 

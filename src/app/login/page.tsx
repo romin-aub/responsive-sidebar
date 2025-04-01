@@ -6,11 +6,11 @@ import { Input } from '@/core/inputs/input';
 import { useTheme } from '@/store/hooks/useTheme';
 import { checkAuth, login } from '@/store/slices/auth-slice';
 import type { RootState } from '@/store/store';
+import { useRouter } from '@tanstack/react-router';
 import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 
 interface ILoginProps {
   username: string;
@@ -24,7 +24,7 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm<ILoginProps>();
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const router = useRouter();
   const isAuthenticated = useSelector(
     (state: RootState) => state.auth.isAuthenticated,
   );
@@ -33,9 +33,9 @@ const LoginPage = () => {
   useEffect(() => {
     dispatch(checkAuth());
     if (isAuthenticated) {
-      navigate('/');
+      router.navigate({ to: '/' });
     }
-  }, [dispatch, isAuthenticated, navigate]);
+  }, [dispatch, isAuthenticated, router]);
 
   const onSubmit = (data: ILoginProps) => {
     dispatch(
@@ -44,7 +44,7 @@ const LoginPage = () => {
         token: btoa(data.username),
       }),
     );
-    navigate('/');
+    router.navigate({ to: '/' });
   };
 
   if (isAuthenticated) {
