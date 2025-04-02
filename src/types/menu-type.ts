@@ -7,9 +7,11 @@ export interface IMenuListItem {
   enabled: boolean; // says if route is enabled
   tooltip?: string; // extra info as tooltip
   roles: number[]; // roles allowed
+  component: React.FC; // component to render
 }
 
-export interface IMenuListHeader extends Omit<IMenuListItem, 'href'> {
+export interface IMenuListHeader
+  extends Omit<IMenuListItem, 'href' | 'component'> {
   items: (IMenuListItem | IMenuListHeader)[];
 }
 

@@ -1,3 +1,23 @@
+import About from '@/app/(dashboard)/about/page';
+import CreativeDayHighlights from '@/app/(dashboard)/awards/day-highlights/creative/page';
+import InnovativeDayHighlights from '@/app/(dashboard)/awards/day-highlights/innovative/page';
+import PopularDayHighlights from '@/app/(dashboard)/awards/day-highlights/popular/page';
+import CreativeMonthHighlights from '@/app/(dashboard)/awards/month-highlights/creative/page';
+import InnovativeMonthHighlights from '@/app/(dashboard)/awards/month-highlights/innovative/page';
+import PopularMonthHighlights from '@/app/(dashboard)/awards/month-highlights/popular/page';
+import CompetitiveNominees from '@/app/(dashboard)/awards/nominees/competitive/page';
+import MostRatedNominees from '@/app/(dashboard)/awards/nominees/most-rated/page';
+import CreativeYearHighlights from '@/app/(dashboard)/awards/year-highlights/creative/page';
+import InnovativeYearHighlights from '@/app/(dashboard)/awards/year-highlights/innovative/page';
+import PopularYearHighlights from '@/app/(dashboard)/awards/year-highlights/popular/page';
+import ECommerce from '@/app/(dashboard)/categories/e-commerce/page';
+import Fashion from '@/app/(dashboard)/categories/fashion/page';
+import Gaming from '@/app/(dashboard)/categories/gaming/page';
+import ContactUs from '@/app/(dashboard)/contact-us/page';
+import MyRank from '@/app/(dashboard)/my-rank/page';
+import Explore from '@/app/(dashboard)/page';
+import Participate from '@/app/(dashboard)/participate/page';
+import Submissions from '@/app/(dashboard)/submissions/page';
 import type { IMenuList } from '@/types/menu-type';
 import {
   faAward,
@@ -29,6 +49,7 @@ export const getMenuList = (): IMenuList[] => [
     href: '/',
     enabled: true,
     roles: [1, 2, 3],
+    component: Explore,
   },
   {
     label: 'awards.title',
@@ -48,6 +69,7 @@ export const getMenuList = (): IMenuList[] => [
             href: '/awards/nominees/most-rated',
             enabled: true,
             roles: [1, 2],
+            component: MostRatedNominees,
           },
           {
             label: 'awards.nominees.competitive.title',
@@ -55,6 +77,7 @@ export const getMenuList = (): IMenuList[] => [
             href: '/awards/nominees/competitive',
             enabled: true,
             roles: [1, 2],
+            component: CompetitiveNominees,
           },
         ],
       },
@@ -70,6 +93,7 @@ export const getMenuList = (): IMenuList[] => [
             href: '/awards/day-highlights/popular',
             enabled: true,
             roles: [1, 2],
+            component: PopularDayHighlights,
           },
           {
             label: 'awards.dayHighlights.creative.title',
@@ -77,6 +101,7 @@ export const getMenuList = (): IMenuList[] => [
             href: '/awards/day-highlights/creative',
             enabled: true,
             roles: [1, 2, 3],
+            component: CreativeDayHighlights,
           },
           {
             label: 'awards.dayHighlights.innovative.title',
@@ -84,6 +109,7 @@ export const getMenuList = (): IMenuList[] => [
             href: '/awards/day-highlights/innovative',
             enabled: true,
             roles: [1, 2, 3],
+            component: InnovativeDayHighlights,
           },
         ],
       },
@@ -99,6 +125,7 @@ export const getMenuList = (): IMenuList[] => [
             href: '/awards/month-highlights/popular',
             enabled: true,
             roles: [1, 2],
+            component: PopularMonthHighlights,
           },
           {
             label: 'awards.monthHighlights.creative.title',
@@ -106,6 +133,7 @@ export const getMenuList = (): IMenuList[] => [
             href: '/awards/month-highlights/creative',
             enabled: true,
             roles: [1, 2, 3],
+            component: CreativeMonthHighlights,
           },
           {
             label: 'awards.monthHighlights.innovative.title',
@@ -113,6 +141,7 @@ export const getMenuList = (): IMenuList[] => [
             href: '/awards/month-highlights/innovative',
             enabled: true,
             roles: [1, 2, 3],
+            component: InnovativeMonthHighlights,
           },
         ],
       },
@@ -128,6 +157,7 @@ export const getMenuList = (): IMenuList[] => [
             href: '/awards/year-highlights/popular',
             enabled: true,
             roles: [1],
+            component: PopularYearHighlights,
           },
           {
             label: 'awards.yearHighlights.creative.title',
@@ -135,6 +165,7 @@ export const getMenuList = (): IMenuList[] => [
             href: '/awards/year-highlights/creative',
             enabled: true,
             roles: [1],
+            component: CreativeYearHighlights,
           },
           {
             label: 'awards.yearHighlights.innovative.title',
@@ -142,6 +173,7 @@ export const getMenuList = (): IMenuList[] => [
             href: '/awards/year-highlights/innovative',
             enabled: true,
             roles: [1],
+            component: InnovativeYearHighlights,
           },
         ],
       },
@@ -159,6 +191,7 @@ export const getMenuList = (): IMenuList[] => [
         href: '/categories/e-commerce',
         enabled: true,
         roles: [1, 2, 3],
+        component: ECommerce,
       },
       {
         label: 'categories.gaming.title',
@@ -166,6 +199,7 @@ export const getMenuList = (): IMenuList[] => [
         href: '/categories/gaming',
         enabled: true,
         roles: [1, 2],
+        component: Gaming,
       },
       {
         label: 'categories.fashion.title',
@@ -173,6 +207,7 @@ export const getMenuList = (): IMenuList[] => [
         href: '/categories/fashion',
         enabled: true,
         roles: [1, 2, 3],
+        component: Fashion,
       },
     ],
   },
@@ -182,6 +217,7 @@ export const getMenuList = (): IMenuList[] => [
     href: '/participate',
     enabled: true,
     roles: [1, 2, 3],
+    component: Participate,
   },
   {
     label: 'my-rank.title',
@@ -189,6 +225,7 @@ export const getMenuList = (): IMenuList[] => [
     href: '/my-rank',
     enabled: true,
     roles: [1, 2, 3],
+    component: MyRank,
   },
   {
     label: 'about.title',
@@ -196,6 +233,7 @@ export const getMenuList = (): IMenuList[] => [
     href: '/about',
     enabled: true,
     roles: [1, 2, 3],
+    component: About,
   },
   {
     label: 'contact-us.title',
@@ -203,6 +241,7 @@ export const getMenuList = (): IMenuList[] => [
     href: '/contact-us',
     enabled: true,
     roles: [1, 2, 3],
+    component: ContactUs,
   },
   {
     label: 'submissions.title',
@@ -210,5 +249,6 @@ export const getMenuList = (): IMenuList[] => [
     href: '/submissions',
     enabled: true,
     roles: [1],
+    component: Submissions,
   },
 ];

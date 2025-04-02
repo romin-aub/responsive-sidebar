@@ -1,5 +1,5 @@
 import { RouterProvider } from '@tanstack/react-router';
-import { router } from './routes/tanstack-router';
+import { router } from './routes/router';
 import { Providers } from './store/providers';
 
 export const App: React.FC = () => {
