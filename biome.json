@@ -15,7 +15,8 @@
       ".next",
       "next-env.d.ts",
       "*.mjs",
-      "dev-dist"
+      "dev-dist",
+      "*.md"
     ]
   },
   "formatter": {
